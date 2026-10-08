@@ -228,7 +228,7 @@ def token_values(value_model, input_ids, attention_mask):
         head = value_model.classifier
     else:
         raise RuntimeError("Could not locate scalar value head")
-    return head(hidden).squeeze(-1)
+    return head(hidden).squeeze(-1)   
 
 
 def trainable_parameters(model):
