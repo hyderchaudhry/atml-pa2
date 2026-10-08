@@ -103,13 +103,18 @@ def encode_prompt_response(
     messages: list[dict],
     response: str,
     max_length: int,
+    overflow_prompt_tokens: int | None = None,
 ):
     """
     Encode prompt + response for DPO.
 
-    The prompt is kept intact for both chosen and rejected responses.
+    The prompt is kept intact for both chosen and rejected responses by default.
     If the combined sequence exceeds max_length, truncate the RESPONSE
     from the right rather than removing prompt/question tokens.
+
+    Task 1 explicitly opts into a common prompt suffix for prompts that alone
+    exceed the released context budget; the fixed datasets contain such rows.
+    This opt-in leaves all other callers' behavior unchanged.
     """
 
     prompt_ids = tokenizer.apply_chat_template(
@@ -120,11 +125,16 @@ def encode_prompt_response(
 
     # A DPO example is meaningful only if we can condition on the prompt.
     if len(prompt_ids) >= max_length:
-        raise ValueError(
-            f"Prompt alone has {len(prompt_ids)} tokens, which does not fit "
-            f"inside max_length={max_length}. "
-            "Increase max_length or filter this example."
-        )
+        if overflow_prompt_tokens is None:
+            raise ValueError(
+                f"Prompt alone has {len(prompt_ids)} tokens, which does not fit "
+                f"inside max_length={max_length}. "
+                "Increase max_length or explicitly set overflow_prompt_tokens."
+            )
+        if not 0 < overflow_prompt_tokens < max_length:
+            raise ValueError("overflow_prompt_tokens must leave room for response tokens")
+        # Identical prompt suffix for both completions, independent of their lengths.
+        prompt_ids = prompt_ids[-overflow_prompt_tokens:]
 
     response_ids = tokenizer(
         response,

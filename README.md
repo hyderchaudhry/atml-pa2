@@ -83,12 +83,24 @@ The PPO value checkpoint is intentionally released as the exact staff midpoint s
 
 ### Task 1 - DPO
 
+Run these commands in order from the repository root. The beta script trains and
+evaluates all three short runs; the length script trains the length-balanced model
+and compares it with Standard DPO.
+
 ```bash
 python -m task1_dpo.train --config configs/dpo.yaml --run-name standard
 python -m task1_dpo.evaluate --config configs/dpo.yaml --adapter outputs/task1_dpo/standard --name standard
 python -m task1_dpo.ablate_beta --config configs/dpo.yaml
 python -m task1_dpo.analyze_length --config configs/dpo.yaml
 ```
+
+Adapters are saved under `outputs/task1_dpo/`; metrics, logs, and generated
+responses under `results/task1_dpo/`. Directories are created automatically.
+Training refuses to overwrite existing runs. To re-evaluate existing ablation
+models, add `--evaluate-only` to the beta or length command.
+
+Encoding assumption: preference prompts exceeding the 768-token cap retain a
+common 384-token suffix for both responses. Affected IDs are recorded in metadata.
 
 ### Task 2 - PPO
 
