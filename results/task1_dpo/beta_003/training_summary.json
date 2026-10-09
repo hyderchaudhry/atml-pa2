@@ -1,0 +1,24 @@
+{
+  "experiment": "beta_003",
+  "beta": 0.03,
+  "seed": 6304,
+  "training_budget": {
+    "epochs": 1,
+    "examples_per_epoch": 600,
+    "total_examples": 600,
+    "microbatches_per_epoch": 300,
+    "optimizer_steps": 38,
+    "batch_size": 2,
+    "grad_accum_steps": 8,
+    "effective_batch_size": 16,
+    "short_run": true
+  },
+  "examples_seen": 600,
+  "optimizer_steps_attempted": 38,
+  "optimizer_steps_skipped": 0,
+  "elapsed_seconds": 188.97713734099943,
+  "peak_allocated_vram_bytes": 7149450752,
+  "dpo_loss": 0.6919373422861099,
+  "preference_accuracy": 0.5766666666666667,
+  "preference_margin_mean": 0.08228040547420581
+}

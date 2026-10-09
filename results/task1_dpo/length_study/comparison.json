@@ -1,0 +1,134 @@
+{
+  "standard": {
+    "metrics_path": "/content/atml-pa2/results/task1_dpo/standard/metrics.json",
+    "training_budget": {
+      "epochs": 1,
+      "examples_per_epoch": 1500,
+      "total_examples": 1500,
+      "microbatches_per_epoch": 750,
+      "optimizer_steps": 94,
+      "batch_size": 2,
+      "grad_accum_steps": 8,
+      "effective_batch_size": 16,
+      "short_run": false
+    },
+    "length_stratified": {
+      "overall": {
+        "num_pairs": 246,
+        "dpo_loss": 0.681780117435184,
+        "preference_margin": 0.2742861807346344,
+        "preference_accuracy": 0.5853658536585366
+      },
+      "strata": {
+        "preferred_longer": {
+          "num_pairs": 82,
+          "dpo_loss": 0.6990022354009675,
+          "preference_margin": -0.07193974750797923,
+          "preference_accuracy": 0.4878048780487805
+        },
+        "length_matched": {
+          "num_pairs": 82,
+          "dpo_loss": 0.6847989737260632,
+          "preference_margin": 0.19751203132838738,
+          "preference_accuracy": 0.5853658536585366
+        },
+        "rejected_longer": {
+          "num_pairs": 82,
+          "dpo_loss": 0.6615391431785211,
+          "preference_margin": 0.697286258383495,
+          "preference_accuracy": 0.6829268292682927
+        }
+      }
+    },
+    "common_word_limit": {
+      "num_prompts": 10,
+      "kl_from_reference": 0.0009655756390808771,
+      "kl_log_ratio_sum": 0.5098239374347031,
+      "kl_response_tokens": 528,
+      "reward_model_score": 3.1650390625,
+      "response_length_tokens": {
+        "mean": 52.8,
+        "std": 26.49830183238164,
+        "median": 41.5,
+        "min": 28,
+        "max": 111
+      },
+      "word_count": {
+        "mean": 45.7,
+        "std": 23.366856870362348,
+        "median": 33.5,
+        "min": 24,
+        "max": 98
+      },
+      "word_limit_compliance": 0.5,
+      "num_word_limit_prompts": 10,
+      "truncation_rate": 0.0
+    }
+  },
+  "length_balanced": {
+    "metrics_path": "/content/atml-pa2/results/task1_dpo/length_balanced/metrics.json",
+    "training_budget": {
+      "epochs": 1,
+      "examples_per_epoch": 1500,
+      "total_examples": 1500,
+      "microbatches_per_epoch": 750,
+      "optimizer_steps": 94,
+      "batch_size": 2,
+      "grad_accum_steps": 8,
+      "effective_batch_size": 16,
+      "short_run": false
+    },
+    "length_stratified": {
+      "overall": {
+        "num_pairs": 246,
+        "dpo_loss": 0.6752488441098996,
+        "preference_margin": 0.46439887183468515,
+        "preference_accuracy": 0.6056910569105691
+      },
+      "strata": {
+        "preferred_longer": {
+          "num_pairs": 82,
+          "dpo_loss": 0.7221396151112347,
+          "preference_margin": -0.4831753474910085,
+          "preference_accuracy": 0.43902439024390244
+        },
+        "length_matched": {
+          "num_pairs": 82,
+          "dpo_loss": 0.6776100404378844,
+          "preference_margin": 0.36183060451251703,
+          "preference_accuracy": 0.5853658536585366
+        },
+        "rejected_longer": {
+          "num_pairs": 82,
+          "dpo_loss": 0.6259968767805797,
+          "preference_margin": 1.514541358482547,
+          "preference_accuracy": 0.7926829268292683
+        }
+      }
+    },
+    "common_word_limit": {
+      "num_prompts": 10,
+      "kl_from_reference": 0.006196724938864939,
+      "kl_log_ratio_sum": 3.01160832028836,
+      "kl_response_tokens": 486,
+      "reward_model_score": 3.3279296875,
+      "response_length_tokens": {
+        "mean": 48.6,
+        "std": 20.645580640902306,
+        "median": 41.5,
+        "min": 25,
+        "max": 86
+      },
+      "word_count": {
+        "mean": 41.8,
+        "std": 18.115186998758805,
+        "median": 33.5,
+        "min": 21,
+        "max": 75
+      },
+      "word_limit_compliance": 0.5,
+      "num_word_limit_prompts": 10,
+      "truncation_rate": 0.0
+    }
+  }
+}

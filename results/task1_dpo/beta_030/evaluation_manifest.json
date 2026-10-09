@@ -1,0 +1,3730 @@
+{
+  "experiment": "beta_030",
+  "beta": 0.3,
+  "seed": 6304,
+  "adapter": "/content/atml-pa2/outputs/task1_dpo/beta_030",
+  "training_budget": {
+    "epochs": 1,
+    "examples_per_epoch": 600,
+    "total_examples": 600,
+    "microbatches_per_epoch": 300,
+    "optimizer_steps": 38,
+    "batch_size": 2,
+    "grad_accum_steps": 8,
+    "effective_batch_size": 16,
+    "short_run": true
+  },
+  "training_metadata_sha256": "ee0e916ad14a9b04416f49cf821b82c2c04744297f17ea93118292bfcf777d59",
+  "model_revisions": {
+    "base": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "reward": "f98759a4a1ccdc47a3136748b6bfea9a32ba8fcc"
+  },
+  "adapter_sha256": {
+    "adapter_config.json": "18993c388788ec14de72fd4f6f9ff86ce761ffc3aad5d0923b33f4365be03d97",
+    "adapter_model.safetensors": "11a3cf9b9b3b215bedeaa28421988b680106051991d218c77bd9c9def0be2a4f"
+  },
+  "datasets": {
+    "dpo_standard_eval": {
+      "path": "/content/atml-pa2/data/dpo_standard_eval.jsonl",
+      "sha256": "c1f9e7c7e140b4671efd67173a4434946780cf04232aabc03ef317ae621e5079",
+      "num_examples": 300,
+      "selection": [
+        {
+          "data_index": 0,
+          "prompt_id": "c4f8c8d58e4d3a89d69adf1898cf59c951b9af63936ed8ab6eff222020e86800",
+          "source_index": 435,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 1,
+          "prompt_id": "8b2f332e97657fa5ceb5f23f5a18aa2191f2ea2c476d66c10256f7d1395f5df1",
+          "source_index": 414,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 2,
+          "prompt_id": "31a8d12ff0895435014ec9174145af54fc7e0a60dee05c88078d4354bf5b6cd1",
+          "source_index": 111,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 3,
+          "prompt_id": "610c10097207e5ab761b4296a975518947fdbb454f0e4ef1296d98c7539d41c5",
+          "source_index": 1171,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 4,
+          "prompt_id": "ceaafeb7d341781f3e876b1a8c8f611ede9e029e6ca84aa5527c3c046a36efdf",
+          "source_index": 650,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 5,
+          "prompt_id": "c048144a60a3a7b424dfad0c39fa2b30f111b81f43b5ce8a48e5b645be11028a",
+          "source_index": 1083,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 6,
+          "prompt_id": "28bf5e48269b10589e0846c6d4d7773f9a15c524a94f322add0c20daad26ad33",
+          "source_index": 1823,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 7,
+          "prompt_id": "ef096f549ae38a0e02e6f3d73db0bd420995c23aabaa9f383b5dc5782e73ac0a",
+          "source_index": 17,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 8,
+          "prompt_id": "10f6d14550c20166d409df907660ad7aaa31ac79243eac101edddb5b9e281253",
+          "source_index": 1901,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 9,
+          "prompt_id": "d04094cb1c27b47359108e1bf1d917c48ce8c8b8481f55c1cb244410261465b5",
+          "source_index": 1684,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 10,
+          "prompt_id": "e9611454c885dcda36186af633052f8f35756c6782b987132a80b873a6fa492a",
+          "source_index": 797,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 11,
+          "prompt_id": "e943441f467478f47c86fa75b23d519b68adea52f38899de5ecc77c06fbbe529",
+          "source_index": 824,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 12,
+          "prompt_id": "1e9a1dfae5d6bfe05464466e784fe22def7fc3d9927291e513b3c8389e3873da",
+          "source_index": 853,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 13,
+          "prompt_id": "6d41333fcd38e4b75efab869b10d54566e58e989a91e541828b7bb3f558ca008",
+          "source_index": 102,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 14,
+          "prompt_id": "3ae6b979253533ae24823844cd8af57ef3fb1d4f23c4faf0546c3335a7be0e5f",
+          "source_index": 79,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 15,
+          "prompt_id": "b85f0ee8c73d1ba854550e337fc0366e30832033920407ae102ec5b6d748e16c",
+          "source_index": 389,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 16,
+          "prompt_id": "bd3d0ce3bdccb6d23059a25312b385343b8b00415abb31daf40b575849040cff",
+          "source_index": 646,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 17,
+          "prompt_id": "b072bb2e9fb54328b2ce10a2464669440d34c54628ff76af32469fa8cb133976",
+          "source_index": 1153,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 18,
+          "prompt_id": "c199653a4cad2251a14ee5c0c554a15536b5086a942ba5a9666a2ed8c7b53ef3",
+          "source_index": 1576,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 19,
+          "prompt_id": "7638a0044d25f29a9d0a06bc40845f59fe25f554ed6fc5afd071c69a00e13b6b",
+          "source_index": 768,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 20,
+          "prompt_id": "855397b5096b8b9544ef1af8b0c858980dcf528c9103b2740a26f72f132ada05",
+          "source_index": 1386,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 21,
+          "prompt_id": "a0e01a8554aa6693086efac6b524916248064d090e0ed4afaeda34813203a8da",
+          "source_index": 1427,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 22,
+          "prompt_id": "3e5cb386792b79fdaea2d738696bb31484540b65378f0407b7c8cbcf4d2aec15",
+          "source_index": 1464,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 23,
+          "prompt_id": "8877f25cf9d6c6665ce92d44de7864742a5d46a2ece0409749bb3c905a5be65d",
+          "source_index": 705,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 24,
+          "prompt_id": "1ffef39d3bc73bbf7805be0b490f08d2270e8a8a925bca054bed300fab4b3193",
+          "source_index": 1929,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 25,
+          "prompt_id": "cc79a98cbf34fc37008fc08cfa8053dd1c4a0bb6667e574c2da966153cb8e737",
+          "source_index": 1661,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 26,
+          "prompt_id": "47346fedceb37cd8261325c487894f9f66e867cd962c5f489964cf7be8f8ac25",
+          "source_index": 1889,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 27,
+          "prompt_id": "1e956fd0ef6b40427cb12f753f37fef0605b0636e078c9b88b82c456811706f8",
+          "source_index": 1396,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 28,
+          "prompt_id": "e9f504c0092c32d7b7a872c3b0a010bdce8eb3f40cd8ee2aa84b05facec90132",
+          "source_index": 1051,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 29,
+          "prompt_id": "a89c95dcbc6cc7014a334486c4bb98c650474dc919887936e3023451c5ca6e88",
+          "source_index": 1731,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 30,
+          "prompt_id": "f4039e4eb3666707a885872968f842471f39efbd85c61d6bfe3d5b98e869998b",
+          "source_index": 1267,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 31,
+          "prompt_id": "acc70578c3f6e8048daf021329222978bd5b41015317e84d8085a163a1f5a523",
+          "source_index": 519,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 32,
+          "prompt_id": "99a843a7d5621de7f5660c5de46249dc47af2796ad9e8e81a4e11ca699ab2748",
+          "source_index": 1847,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 33,
+          "prompt_id": "fd4f75e82639d37b7515ff3021eaf6600becbde004cfc195ad7bb8344446494a",
+          "source_index": 901,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 34,
+          "prompt_id": "ca6f15144bb9c8793d0bbdebe3ddaadbce8cffa2f3a7bf0186c926eb76f7476b",
+          "source_index": 1086,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 35,
+          "prompt_id": "8a8a0193717066664ec4b9d9e3caec4e418872dd032bda745c0414b13a7487ad",
+          "source_index": 737,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 36,
+          "prompt_id": "c590e6b09bc2956e38a9eabbeda0c39eb10534f18519b103451f35641abe5656",
+          "source_index": 1767,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 37,
+          "prompt_id": "c85dbdf509c9b258011e0b5726d4902e4f97f1b0ee23a09ea9fc84de2b9f136c",
+          "source_index": 494,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 38,
+          "prompt_id": "a28191636d9e42835cbb0a4e8f478ef738a08d54e12f8eb404db48f94f453f9f",
+          "source_index": 1165,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 39,
+          "prompt_id": "6437f0b92ce92c315f2ff143e19176534f033b7e7c8599f6e1d3a56fbc681f33",
+          "source_index": 1063,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 40,
+          "prompt_id": "675fded4aab1a98df01b33dec39a9fc6c71e36c1df335ee315a83c7b1f997d10",
+          "source_index": 62,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 41,
+          "prompt_id": "83ea504f6aaf6454d826039e840b525baf93efd7dd969436afc2232a786d9a3d",
+          "source_index": 783,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 42,
+          "prompt_id": "e1ba601807a9b2ac083e7e87eb2e4df0b36158cc3ef1291bcd25321a408a8425",
+          "source_index": 1919,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 43,
+          "prompt_id": "c9c763d97ec7b8904a6a84387ded3da57de1e948da36fc6089ac24bf6b3972c8",
+          "source_index": 364,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 44,
+          "prompt_id": "76fac00348149b0d92b37d9ea22f1d5446e71391054f83e89f4b77845758ba5c",
+          "source_index": 1781,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 45,
+          "prompt_id": "9d663f5bcb9aa1db40d53fab98b8f2e450ae99bc88159f136c1b05f70cd50dd0",
+          "source_index": 1227,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 46,
+          "prompt_id": "52939745010fe22a034201711723826d5ebb5c6069d47647b801614fe9169709",
+          "source_index": 413,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 47,
+          "prompt_id": "0491583acdc81b2a9cc72ee7521f7e54fb0a200ecb3745bc674738fa0e0ed91d",
+          "source_index": 546,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 48,
+          "prompt_id": "2b4a671ad90b727df31d7a5b5150c803879aed3e57b3d3985c7448a76895bde0",
+          "source_index": 1611,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 49,
+          "prompt_id": "3af1bdb3f9bc15e2030a89104d1ff6eebc78a3a1262fc350d35cf181bcd34481",
+          "source_index": 40,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 50,
+          "prompt_id": "3cc65f3f13467de0f2aaec547422acf667df6c3214b89c60fa4161807abcd8c0",
+          "source_index": 1126,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 51,
+          "prompt_id": "9d9d43d9e7796477ba9c4e8f77a0daa92183769a182d0e396115d54e4fab6ede",
+          "source_index": 780,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 52,
+          "prompt_id": "0ab21f416d29fd0703d0191064919529845141100081febc053683e8d5ebc0bf",
+          "source_index": 1564,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 53,
+          "prompt_id": "d93802966001d4f027e92ab88fc6e8f7e7c451b74bfdb081531cae9e0fdd9fea",
+          "source_index": 1508,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 54,
+          "prompt_id": "a53005ab3aacbb76a7c21c759df91a103d16fa48cb52f9886ec4447a4a1d4800",
+          "source_index": 1952,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 55,
+          "prompt_id": "82537f27478a93b7da39b997061db33c8cc2de0f4352b9236708a02b2f9b84b3",
+          "source_index": 483,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 56,
+          "prompt_id": "4924f2549d44d6b36ed7eafb7a1e0521ed7f261fbee6c3c2a72f28e0ea147ec7",
+          "source_index": 18,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 57,
+          "prompt_id": "1e2e0f30e252bcfc26f3e20a3a08070fe4f142cd362bdf26e0d330d5045460db",
+          "source_index": 1704,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 58,
+          "prompt_id": "5705509ee4ec2906bb34a691526162cf11acc3664f2287d2da7eea5c60d3ffd0",
+          "source_index": 1963,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 59,
+          "prompt_id": "f68ab836eb7c695490d1812e67396fee8d79d8688bd1547ccb68d29e66aaa198",
+          "source_index": 171,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 60,
+          "prompt_id": "f8603e835872e1c804ef8544b8a345f7bb4ff0925b11d3da1d6648cb045fbade",
+          "source_index": 144,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 61,
+          "prompt_id": "a3412befc77e42a08f896019d0046d531a318bf3b34171de202e3dfd9e5ef66d",
+          "source_index": 611,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 62,
+          "prompt_id": "21a37cd9a72739d56d90061c42121b8f2688c5a4a623d3c7a669e5a686806174",
+          "source_index": 1592,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 63,
+          "prompt_id": "6317086f53ad82588c2a750b28c40c9d25e7c091387514f3f5071b06e47712c4",
+          "source_index": 412,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 64,
+          "prompt_id": "f28e9624684a4a4043c4e04d7f6e848eae67730ca5b105a5031358c898ae7872",
+          "source_index": 454,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 65,
+          "prompt_id": "0fea2e3d5bdaf8ba2ead0eb00ad562386d9e1d0a02035d82a8c28f830778bea1",
+          "source_index": 533,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 66,
+          "prompt_id": "7d8660119028f8aa31e5a5db392c8ab0bf77d4a1293e39a56ad7ba742c08344b",
+          "source_index": 1432,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 67,
+          "prompt_id": "4f33406984a815380d4d965e129edf01ce8beb36907d41345bf9af706d811dc0",
+          "source_index": 836,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 68,
+          "prompt_id": "7d8e9eeec42348aaf6fa05125338ed5c0a0f98f58709b4d2b641599ef043b21e",
+          "source_index": 5,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 69,
+          "prompt_id": "a1cf03d99899e7942b68fab4e548b4b17fbc97fae370e42026c976f4ebac6946",
+          "source_index": 1659,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 70,
+          "prompt_id": "3f9e4910d1f1855ae40b1647584aad9be067229099581f9783458138a93e7c75",
+          "source_index": 1419,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 71,
+          "prompt_id": "175ce5926626b171f863baf48b4337e2a17a5fcbf04b571e1e0612c7bd12d365",
+          "source_index": 1474,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 72,
+          "prompt_id": "cab6bc874e7d10139ede9054bb53fdd6565f19eb577893e6f4bb404d051543ec",
+          "source_index": 315,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 73,
+          "prompt_id": "22b703fcb36545843c9752f94f1b0452f071aca7c90ea46e7cc781aafafaab58",
+          "source_index": 751,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 74,
+          "prompt_id": "44e60e6bd46d0237b4a97bfb98fdeb940978bbbd7dd7ee3fb226a100a220532c",
+          "source_index": 400,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 75,
+          "prompt_id": "40d7444dbf57d57f346ac5ffcb5699a5ad5804b10ba38f81aa126ecdad5fc940",
+          "source_index": 662,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 76,
+          "prompt_id": "fcb0233fd9dab90553f63989f61ae58486317c225a408d815ecffee9c56c88cf",
+          "source_index": 663,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 77,
+          "prompt_id": "e60882aa61e6012981f29a5118b503b9d48dada4218f77e1ae57bf70dfa0900d",
+          "source_index": 969,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 78,
+          "prompt_id": "5a9a0bda09bf39576c3527c8bfbd50344a482ca7a0d0a7c963a225c21678ce05",
+          "source_index": 1221,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 79,
+          "prompt_id": "3c954aee2bb587d05efc85126cee983f23bc68594fbe198cee9c69b3eef27829",
+          "source_index": 1663,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 80,
+          "prompt_id": "86670ee7e3a7bd3efcff9bbc268383134051df4c73a5cdb0a5446bcba3f3e588",
+          "source_index": 1253,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 81,
+          "prompt_id": "140b36de709d99849bbba50c4a608ace84d1728635eecc820ac7a735a8be4361",
+          "source_index": 328,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 82,
+          "prompt_id": "bbb729809356522febd6a58d7c951f31bb900370b19c7f5a0fd69c1f122d1f6c",
+          "source_index": 1692,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 83,
+          "prompt_id": "b0f5d49c63e7f2810b5fddf3d628821cc9810700f475c5fc3b642acfaaa74d3a",
+          "source_index": 837,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 84,
+          "prompt_id": "2b6715c2f665f6848c84d5597e9766a3a33d6be57a61dd217f6c78600a526391",
+          "source_index": 1804,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 85,
+          "prompt_id": "fa49ba535d641bba67ca07f353d89172455a50a42815d6c380e686142db4df3f",
+          "source_index": 819,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 86,
+          "prompt_id": "6cde65ad624a85b92f87d11f2dcfd72ed38b3d77c319e4ce7f4983abe1e9d7b4",
+          "source_index": 1262,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 87,
+          "prompt_id": "7961ac8875df0523c009d601235d46d12f4005fc071b0b37881c5a08e39ac77d",
+          "source_index": 925,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 88,
+          "prompt_id": "d20a85231f8637fb34e8d83dcef4400dc2f5483116f782e1f7cdedd35fe1678c",
+          "source_index": 1169,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 89,
+          "prompt_id": "387350f4ede9b8e36bed24abd70469cf57f4e5a76f5e9a2db1d3e2c5ce2ed648",
+          "source_index": 1658,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 90,
+          "prompt_id": "11eb4c1979bf35351bb2aaf29b17ddb69a489becd8565f4019a9efa80ea294b7",
+          "source_index": 1090,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 91,
+          "prompt_id": "14f69be4f65cbb5ed352ecedd50a1992fb657f09eed4a128dddadb023637d53a",
+          "source_index": 282,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 92,
+          "prompt_id": "30f708d576e26bee20ef4fab906f59cd1b4d3f91abf858edfa3722b4b9d81ded",
+          "source_index": 1326,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 93,
+          "prompt_id": "8a37cd05d2ef305fef2f5922d739a224427017171647ed412daf30c6ac950fef",
+          "source_index": 985,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 94,
+          "prompt_id": "31d22af70de057401fd5d531825c458177f716e0408c54392695a8aeba62cb15",
+          "source_index": 496,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 95,
+          "prompt_id": "0501220f4c01a71817a09b9b2d379bd5dbe12b7c2f85a2dbe31baa24946c0a3e",
+          "source_index": 112,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 96,
+          "prompt_id": "17df8f780d3395d68d8ffae6de1786ab921b442e90dcb22323c9ef8a643bdd3d",
+          "source_index": 962,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 97,
+          "prompt_id": "774be29dc0e3837baee836892bc1c801f3b26352a71f3309da768b8af6a952e0",
+          "source_index": 1506,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 98,
+          "prompt_id": "13450688a9905b010b72cc491d8610b5588c3cacaed0bb30aa6b7c8a2b715aa5",
+          "source_index": 1399,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 99,
+          "prompt_id": "09a5b835ff47b43c05bd29e4bbe2117c53086b181d5dbcce84a62f072b18f0be",
+          "source_index": 1031,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 100,
+          "prompt_id": "a9656f7719a6241d74687ecadad27b0d299abb29758ead03562c432e081f0d17",
+          "source_index": 490,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 101,
+          "prompt_id": "66edc3eca0b1b23511c6d82bcbf4f46cfb5fd0529692a21c690a998aa3e5fd90",
+          "source_index": 1535,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 102,
+          "prompt_id": "f4e108acbb28635c6cc88ac92276b13f30f8ad07217afcb714d8b12d8fb7f657",
+          "source_index": 849,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 103,
+          "prompt_id": "fb2604c2ddf9bd32e3c8024fa9231c380053d0879e36fcb2a65f210d7ae850e3",
+          "source_index": 1720,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 104,
+          "prompt_id": "bdfcf969f2a84458b2498e0acc198d3094334b81d595fed1724210d7c9f89279",
+          "source_index": 185,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 105,
+          "prompt_id": "d52806a25b428e39ccce3f8b45331cab3bf618d2814b23b63b22773c1fc8c20b",
+          "source_index": 920,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 106,
+          "prompt_id": "9cdf9eeef4a7aaf60f3d4336f6b6ec1168ba2086da6a5a024418817c3f385db6",
+          "source_index": 1373,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 107,
+          "prompt_id": "854a13dbc830303538e9ffe01b1539d9e7ac1851d2470616b9e23ea4d59e4143",
+          "source_index": 198,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 108,
+          "prompt_id": "4efbde2e78790a35dd1458fbb03065ac4dc87fbda44d4a63153bd67036b6d2d1",
+          "source_index": 214,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 109,
+          "prompt_id": "5c84c60ada03497bf158cafc0c5ecf46cdeea59f2f9ad071614300bb0215ab68",
+          "source_index": 242,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 110,
+          "prompt_id": "0fcf9dede48ac5c6a8f3cfb96b4e53d5bfa51cd7b92f06e3d3fd47a2d03a0aff",
+          "source_index": 525,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 111,
+          "prompt_id": "aa92aa595d77f81478fa227a3dd9705124a9ff5271a0dcd21b1161833daba8ff",
+          "source_index": 1198,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 112,
+          "prompt_id": "981e3b36ae9d61d79f4f2b38c13a54a5fe00788065a91cd366fc8661c0c8da5e",
+          "source_index": 50,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 113,
+          "prompt_id": "b9eb6ce364c57d0123cb7cb3a0f1df5c469f28134a0438566e9bdd601b8622f2",
+          "source_index": 536,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 114,
+          "prompt_id": "3d0e36eff5b5ba5834fbf4a36b778fbf86c91e8b21ca344d9832e99b44bb7560",
+          "source_index": 1138,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 115,
+          "prompt_id": "0cac0de516a1fa570949902742843f73233c2232d8c10a34462f1cdb1ab4d343",
+          "source_index": 1495,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 116,
+          "prompt_id": "6a85039369234a3960bdc5a7931c86f9542444e1362ab46bdfdbea9ae1830d65",
+          "source_index": 1323,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 117,
+          "prompt_id": "14208147d5f062d02a6f62695bc7888952299658b44fbc653b0241561e302e69",
+          "source_index": 1782,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 118,
+          "prompt_id": "3d53524c218034fb0d31e7f4c9b43f6299bd4f2e6c65dcef4285828b4ed78b8e",
+          "source_index": 1750,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 119,
+          "prompt_id": "f76dbefa1515c4214e0125d111ce3fda41d2631719c41f6fed193460911ce1bb",
+          "source_index": 1649,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 120,
+          "prompt_id": "b48d22c6a2a5fc8b8bb26c4073817401cdd5e7b191226f8329acb7b677bded8e",
+          "source_index": 1190,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 121,
+          "prompt_id": "32bdfb4d0539ea043aca424f23d5c53341b813c7f04ce3c7e483d0b1a884f3fb",
+          "source_index": 675,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 122,
+          "prompt_id": "216a097159f474d348d28bc011d85fb9ec53c78991642b3754ad58d4a4082d47",
+          "source_index": 54,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 123,
+          "prompt_id": "83abfedabadd313c18f608bf6f783be526b7b9e9c9b5b1a7d9adc6d6919e4ec6",
+          "source_index": 820,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 124,
+          "prompt_id": "0e711ba811a98767a1862e26aca8cdf4cea82b8e150504356ad1bf887dd4050e",
+          "source_index": 1668,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 125,
+          "prompt_id": "f9c419ed89a47072f9f87134d9b684434638f850dcc524dd9f463854bcd17100",
+          "source_index": 466,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 126,
+          "prompt_id": "0382ca1d7acbc9006104690f41bafbd74f3b2689caf74d968f807984a0788e00",
+          "source_index": 839,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 127,
+          "prompt_id": "f13173d7b6c6fc9e48508e279cee3dc8995bdc82a5aeadb807cc3d1716d11abf",
+          "source_index": 543,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 128,
+          "prompt_id": "729ee2a5c749f00e1fe214adb448d2cddc0ef069ef0247fdcf9ce06b4cb5de99",
+          "source_index": 784,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 129,
+          "prompt_id": "275a9494462186bf89ea37bca3f59372df03051c1f66be7da1080df5115bf355",
+          "source_index": 157,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 130,
+          "prompt_id": "1335a25cc611a43767ce0c02923d111d70dc1dc244c3166a384f2d763a20dbea",
+          "source_index": 1859,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 131,
+          "prompt_id": "d70053f4375dd47082610320bf3c8ab0ecfdda3ff253099928f8c1a6328c6737",
+          "source_index": 991,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 132,
+          "prompt_id": "ef8dc0933d9ba3d051744ae17c417d34fcdbdaaea59963af5ee68b8e5fb87544",
+          "source_index": 67,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 133,
+          "prompt_id": "8b54653e0f0bd34e00294e1c642e77e1e79e9c822a7c60706d2b5d4237b92ad9",
+          "source_index": 1825,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 134,
+          "prompt_id": "afec92c29b0b232de81cf1d683f6acabe841661f516dd3df00e8da656a052793",
+          "source_index": 1455,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 135,
+          "prompt_id": "ab011fc5a9a978a20fc720d65b81a834249dca81b474a622b48a11f6179c96d4",
+          "source_index": 1072,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 136,
+          "prompt_id": "6225f386d6bf5a43e0552122cb01a3105b1d350b088dd9ce22582308cf05cb74",
+          "source_index": 984,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 137,
+          "prompt_id": "5b65aebda07711f3b75a7e893258b7ad2d99d8107379e798fe78088b5041690d",
+          "source_index": 1651,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 138,
+          "prompt_id": "f3cd700a19ec869ed9c52979a7f6074e8206b79b7bce16cb17f814ed8c34d600",
+          "source_index": 916,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 139,
+          "prompt_id": "801f6545cebea671d282212c16b507f1ffcc1bdda0e2d44b354fc293cd1f2065",
+          "source_index": 1451,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 140,
+          "prompt_id": "6c601a7abce383e127a83ce0b5235e62a374832f3bcb0d4ba7805d1006d7cfd5",
+          "source_index": 114,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 141,
+          "prompt_id": "722ed33dbe4652ab6f0e0aa6f3338e7bdbf1a9d4b88988b8ffdbd72fc455a3d0",
+          "source_index": 305,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 142,
+          "prompt_id": "947a3f2101f6b4cf40ba344aec7a5b4bfd4c37bbf91e35fa7d5141ba077ab7fa",
+          "source_index": 1797,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 143,
+          "prompt_id": "6735e53abfa93e479e1990ab3aa974326216bcf2b2372a6de893eb94e36ef489",
+          "source_index": 486,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 144,
+          "prompt_id": "7306124d5b0716446b5058c6e73648574480453c7baad2d093eaaa854d4c3f14",
+          "source_index": 946,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 145,
+          "prompt_id": "1762b0067e2b82689d13b67c4c8a1447aa72c262246f34ae94fe4417e6d91c71",
+          "source_index": 58,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 146,
+          "prompt_id": "920603364021701350a2708ef788396c79d2e2b7ae48519bad2b09beac27fbbc",
+          "source_index": 693,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 147,
+          "prompt_id": "cfe9a3a2182c199a85be930630ef00fbbab9bb1cdccfa4c1a20b518407e4ca4e",
+          "source_index": 228,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 148,
+          "prompt_id": "5c0dbf72df4ac137228f9d139d83f59405ea936788fee2b2306bd08a6b3e5dda",
+          "source_index": 1709,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 149,
+          "prompt_id": "6e3af4352050918838c0b8d4f18cd5f636d9e701a06b327287da96c874d42cc2",
+          "source_index": 547,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 150,
+          "prompt_id": "06e07a0bc778e2991c3085263f812c5ee642ba7e57b9b79e0393a7e763f2757b",
+          "source_index": 556,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 151,
+          "prompt_id": "942295e72dc5560783d359f1a830d8b457caa3966b18a56dcfdfcab17ee0cd0d",
+          "source_index": 489,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 152,
+          "prompt_id": "20ce674ab84cff2aa739eca655b1fa45021b0ba6b5573d01057c71b95cae6240",
+          "source_index": 517,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 153,
+          "prompt_id": "770a563cb403af6024845c01954a3b86a89d11e22e2e3732820fe25c4d90099f",
+          "source_index": 773,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 154,
+          "prompt_id": "ba7ddaf72f0e034da39b43276b9f418894a12a6fffdbcf6359a302ef1b34688e",
+          "source_index": 184,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 155,
+          "prompt_id": "021a9bfd6287a027bd06c258d2e08708e04f52537fc1aa32abadc67f950ef650",
+          "source_index": 1636,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 156,
+          "prompt_id": "6eb24da82022f75c193ad2383d36366f0673b034b3ea8db245327a46ed56b158",
+          "source_index": 1857,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 157,
+          "prompt_id": "c81ea0995df7f9912a266c0de65bd36568d22f91cab56db431f5135569100180",
+          "source_index": 1033,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 158,
+          "prompt_id": "b02ac1ccfc3e5225a692d33bea31af972e591bef4dbc88aec9cd2c3a85091e23",
+          "source_index": 725,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 159,
+          "prompt_id": "db15225e8abeaf64c09da0ab7d4bd674b8734060a8d442e0559f3a6966bdba9e",
+          "source_index": 7,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 160,
+          "prompt_id": "5294c9606e5e6fb93dc94319d5547c1cba3d6d44da00ee551d2621227e3b6ee8",
+          "source_index": 254,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 161,
+          "prompt_id": "43edbcf9c3997a4742a4dd83c0323c9f40817f3817d4efb92302d12ba7bc7417",
+          "source_index": 444,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 162,
+          "prompt_id": "a569256203e80daf266a13ce2344cde620c62f8581302b112dd3d40314f71715",
+          "source_index": 427,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 163,
+          "prompt_id": "2b818e3d05c926f3acedf53ba1a020eb6c120f101da458b0b502eefb54170115",
+          "source_index": 935,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 164,
+          "prompt_id": "7e2845336e38e4f480dfc5aa4c88637d65b1122bd4f6f8f81d394fc14af48e5a",
+          "source_index": 385,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 165,
+          "prompt_id": "aca585934d139c0ea4abcffd29c3fb6e99734fc603450d06b12701f77545bb21",
+          "source_index": 1526,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 166,
+          "prompt_id": "178a49ff94b31550fd30e3bf3b20402b818300bcdada95ee46bcd63f0060d346",
+          "source_index": 1707,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 167,
+          "prompt_id": "48bbf9def628ad9c3952125307475bae4d73d81826e550bb950bfd726ca57a68",
+          "source_index": 1627,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 168,
+          "prompt_id": "ae12de1584037125ac418a027b79f5a33612a8d208da402fd9b91a73a6ac9e1b",
+          "source_index": 1515,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 169,
+          "prompt_id": "0818d7a1d0982a89c0ac99c2572b43d53b2150fd3021879da5acf42a2df599b7",
+          "source_index": 12,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 170,
+          "prompt_id": "bf70c4c587d0e2b8bd103be8c7ff734265d6b77f4343ebed95512a2c16c60091",
+          "source_index": 1163,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 171,
+          "prompt_id": "4d25dc88274ebe097009bac9f597047b2776f9c0b76ee3c38c4920e42d66e931",
+          "source_index": 249,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 172,
+          "prompt_id": "ad2a254a14156422caf528bb06d4bcb7255ffd3928e4bc3040b7c4d8765120c4",
+          "source_index": 715,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 173,
+          "prompt_id": "0a72dd01c47a5d95cf56f4cde1a1e08adf48c5541fd6352355da7a0c2b44c021",
+          "source_index": 1283,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 174,
+          "prompt_id": "8ae54306663e1244ce441e11a1a615c75f0642e703802706ec13a596bec9fd9a",
+          "source_index": 1269,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 175,
+          "prompt_id": "bafb4bfefaa674b232b009e73cc590ecc6824e971b248c2b03ae29fc652965d7",
+          "source_index": 59,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 176,
+          "prompt_id": "e3de5c87fbef3a26793a2bf22ff792f119f89e202e1a7dc7cfaa605981b8e4e8",
+          "source_index": 329,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 177,
+          "prompt_id": "206b7c5d325784cfc41d7d7dbc71c9d9872a7e64e7392ebd0371c512d60e9a6e",
+          "source_index": 1219,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 178,
+          "prompt_id": "3b06f17a332ce98611838bdc2aa2f0e8c512bf98a208bdbca5c97e01d5413dd6",
+          "source_index": 1042,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 179,
+          "prompt_id": "1127ee833c972f00c1a9d1b005b725c4d99b0c67de5945c03f1f724a7db43780",
+          "source_index": 912,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 180,
+          "prompt_id": "691c980f11d6f3cd9b6fb7def24c77f16e7359c9c4bf38ec4de7d3327a164705",
+          "source_index": 680,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 181,
+          "prompt_id": "70a5471e75f4ab09037c89bf019ddf785f07a9d74a63915e4cf32bfcd5f5e465",
+          "source_index": 1961,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 182,
+          "prompt_id": "49361c63499195fb17305498fd53187a4d2d32f7ffc5f6ee002f40bcd19a6c05",
+          "source_index": 1645,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 183,
+          "prompt_id": "2c905f2acd27f903dd2e8b472acc95591dec08822365f0601cbff88635fb06ea",
+          "source_index": 905,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 184,
+          "prompt_id": "f32980bf904020cd42532d2c16795204fd4edff4db3567e207bb8e23b26c1d52",
+          "source_index": 1172,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 185,
+          "prompt_id": "1cad2ea6385eddab9423c6ad5ce7282388cc0c9b2fee26b8184f8f4cd924f106",
+          "source_index": 1558,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 186,
+          "prompt_id": "5de48441cc27be3991083664a433712e5fbc50009d0d47d71f83f9f920f8c7d6",
+          "source_index": 1793,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 187,
+          "prompt_id": "45c204387634b6a2cccdb8c7351168cd2cd5b118c82387702df23cfa59e33e8d",
+          "source_index": 1753,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 188,
+          "prompt_id": "7658b3366a3cf883f569375bc603d7370b3403302ab1a2b0d85230957f2f9815",
+          "source_index": 221,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 189,
+          "prompt_id": "2a6b9028ae6a6289fcff2e4705cdbd883497a4f7bd15bf6e6d717240c1ce27af",
+          "source_index": 303,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 190,
+          "prompt_id": "0ccf04c6fca885ee57b1a8542a8115197ff0716dde5d9ea483cd39b2643e3d86",
+          "source_index": 1114,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 191,
+          "prompt_id": "31e9b84bc050d482676b48b262611807038f863410a20792ed53449ee5c184fe",
+          "source_index": 109,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 192,
+          "prompt_id": "049b57a16e45f5c0485fbd4b57f34341e55e5f7e00f314eca61bda0780ed9b59",
+          "source_index": 1808,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 193,
+          "prompt_id": "5fb3cb108ec5c6da3464ab182c01907528ded34845a1bc92071d6f9a94a11e36",
+          "source_index": 1160,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 194,
+          "prompt_id": "651e4c1d0b8bf0212c220f3f0a7d08161ad0952d9e3ea9d0963ab97a45937ea6",
+          "source_index": 457,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 195,
+          "prompt_id": "2298ef7939663380e121e25e8b1bfc192b66e37973f4473b06152c5f949da8e2",
+          "source_index": 1916,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 196,
+          "prompt_id": "311ec11e05eb8c78e9418fd441b71a8233219a12abb0929871613fa30f28ba51",
+          "source_index": 135,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 197,
+          "prompt_id": "ad86afe9508e533cc19d35c42f785e900274a28e57d150e0007c7fb632a70889",
+          "source_index": 922,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 198,
+          "prompt_id": "b04010721d49ba3463d0784782c648a60d8713b500c449e2388dc7dcccce3fbd",
+          "source_index": 219,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 199,
+          "prompt_id": "165c007035dcd2b39f774d9b1b96a7811346215d72e6a68515746b903bc09105",
+          "source_index": 1275,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 200,
+          "prompt_id": "51256465dbed08fe6dbdbe56ccdb47df1922bd45a7d556f1bc5a6d0bc8703e49",
+          "source_index": 1691,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 201,
+          "prompt_id": "631866fcfdfb0150bc6f8ae9afa8c0db999a6fb7d5542c1370b753ebd301d7ba",
+          "source_index": 1973,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 202,
+          "prompt_id": "70bdf46c4e68c84973c2a067550ecf4e01409c5b6c43e99a6b1d9169d6b82d30",
+          "source_index": 864,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 203,
+          "prompt_id": "fe986788cdba0a37ad646602197fecf6088d06a431145c82b62bed4ec73af7aa",
+          "source_index": 210,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 204,
+          "prompt_id": "ee7b7003b96f186726812f27c0c689da5283da51a6a682eb1f65046fda17ba65",
+          "source_index": 911,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 205,
+          "prompt_id": "810f634e5e9ce2aefc4a9c2b677deed287a18177d45709a92124c1dfc21c9c08",
+          "source_index": 1211,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 206,
+          "prompt_id": "0798a83535ec872e84bd86ed0cbc07809c8e9b0c02aeb1a9f2c6bd89d3412122",
+          "source_index": 1154,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 207,
+          "prompt_id": "8be337923e1ce4943da703498967c9a4fddebe172997072ff7be13c970e0e986",
+          "source_index": 921,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 208,
+          "prompt_id": "307f45192cb4df575d2a597130de79acc3397b91c3e282f1a676243c59bfacc1",
+          "source_index": 1109,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 209,
+          "prompt_id": "ed3baf88f6f050288af197f99139afc8b9e4cbf8863aabb3bc6a5420b910d826",
+          "source_index": 104,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 210,
+          "prompt_id": "35210502b2b5d536001a8aea96d6d8ae22c7a5e5221de6e8690f1ea2ff6c7fbb",
+          "source_index": 1978,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 211,
+          "prompt_id": "ea67fc3a425ae4597a4885b223e6128094ca23d0105150ee1afb57830fb8783f",
+          "source_index": 1415,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 212,
+          "prompt_id": "754b02c8203307f14cae46470c58b6994c0023e148de9b660d63df613fb72618",
+          "source_index": 1225,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 213,
+          "prompt_id": "b13936e386d8ec88540d4f615fea1274801962cacce794eb192b4f89f1188633",
+          "source_index": 309,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 214,
+          "prompt_id": "2a4ed7f632dfc21d1dc342051eaf8ea1bcdb528a4fa5913df322c41d84eebe2c",
+          "source_index": 928,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 215,
+          "prompt_id": "8c1ea0d5c45a72e2bef3a0667fa7287ddf9afa8b15d8eb802f99c8b8b96c6838",
+          "source_index": 186,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 216,
+          "prompt_id": "c146faad1c9ac97e32227f227ce60d5af70b14d9d44ab5f0cb4c4a7986ea7330",
+          "source_index": 966,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 217,
+          "prompt_id": "b892e9ea0cf89e41d7e27362eb8f01811fe14063a855f7632f336e728cb10364",
+          "source_index": 1681,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 218,
+          "prompt_id": "d68794c3aae12835b0b7e786c492c396e0494b785e64da876609cd4a530acfb1",
+          "source_index": 142,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 219,
+          "prompt_id": "c8c81a193cc3859af01dc4babe2b1cb8346bdeae00fd5fbb137e7b89558e3d79",
+          "source_index": 1235,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 220,
+          "prompt_id": "a1ad45bc69284c430bc81ea45d51f0291128491deb106b7beab100b5eccdf254",
+          "source_index": 1141,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 221,
+          "prompt_id": "8947cd770c8cc2c63bc379630aca74534ba494165c237d3b9bfea9dd8c7377f1",
+          "source_index": 848,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 222,
+          "prompt_id": "aef04c2fbbef2dd481dc8cd6b95b2d9aee5bb8ab1d071e4396a45aaac3d863e2",
+          "source_index": 1212,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 223,
+          "prompt_id": "4e8d32030cf2c23d534f3aa21c3ed1f41536dfda861fac8aeb7d5b393a410ffa",
+          "source_index": 1467,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 224,
+          "prompt_id": "2d5ef6e9de15fad9830f8fc9fd96049aa3f8f8795251f6686cd8b416185ad177",
+          "source_index": 259,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 225,
+          "prompt_id": "d8c42cd55e2e363831d1a6860e5291b1cfdd4ccfd41df81112613316a023bdea",
+          "source_index": 1882,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 226,
+          "prompt_id": "f3317617283cad2402e6e3bfae08f940d2a6dda3d241b79cda2a74a377127a1e",
+          "source_index": 485,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 227,
+          "prompt_id": "10988e08ae7beac5d25a75a81afa670aa51ae8eb01d66a0bef5c94772d573cae",
+          "source_index": 677,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 228,
+          "prompt_id": "d9d7e941c3f1fd68b6f6cc5e7e442aeb169010fc561b912597675b4c82f33b32",
+          "source_index": 1321,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 229,
+          "prompt_id": "af7fd6f0859c60ced79ae14d2bf80dfbf0c998a52c9f6cc393fe1d3b380353ee",
+          "source_index": 786,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 230,
+          "prompt_id": "8fe174b049f354b39d3ee8579938ebb3a76129a6b9cd0fa7af0a5c600052a531",
+          "source_index": 1167,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 231,
+          "prompt_id": "c527bd922ed586b2f8b602e44e70bf50e36bd1f2fff2366f22c57a0693c2ff64",
+          "source_index": 1839,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 232,
+          "prompt_id": "19d29ae989ccb2a510f2b29b5dbea779ef4e3ec25b97e7b21cf799624d3810c1",
+          "source_index": 548,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 233,
+          "prompt_id": "7d58e4a5e13630797b403c41803194484ec94e68838f2c10263db15a56f12123",
+          "source_index": 1862,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 234,
+          "prompt_id": "f7c8a786279938dd242a58a803d3703a66a9ffbde91b779f984b48262b11121c",
+          "source_index": 695,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 235,
+          "prompt_id": "f1e8db4b26bad99ead041b7e9d5e2f36fe708ed83dc754f4aa74c08077334be5",
+          "source_index": 1756,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 236,
+          "prompt_id": "1291027720840e8d8e92c24a085762f9b2b684898fc62abb814be8cb2bbf9056",
+          "source_index": 524,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 237,
+          "prompt_id": "55a916e05b78d4bef8b2c041549af42592ee388041332c741a93306a5d6e94f5",
+          "source_index": 570,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 238,
+          "prompt_id": "3b9084cf23e63bc5c8b936f7e97d8d840d8cc1112bc623fd4bb0721df796b67c",
+          "source_index": 1403,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 239,
+          "prompt_id": "d7baf0d12770c7c089820ef841ca71a51f8ed5f9138ac00ab318f5c6b044ae4f",
+          "source_index": 1135,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 240,
+          "prompt_id": "8199434086917005eb12e429e46039f7c298eaa5f27f5c344e336ac7f06cb904",
+          "source_index": 1937,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 241,
+          "prompt_id": "53bd992fe0b3d86c5fa8676e976f2b6ab2f23a5336a2af475da249aa13256ad3",
+          "source_index": 817,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 242,
+          "prompt_id": "b0226f6961f93ec9d4136e58f6131526ce3baf5438f936a8b8f97f60620705ba",
+          "source_index": 622,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 243,
+          "prompt_id": "8dc42d779e4044b1b64e056b9e33741556ce5e9bf90d869f3f601640710a151d",
+          "source_index": 1104,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 244,
+          "prompt_id": "35020eff0465c3451f0fe001372cf28508b26fc1494982edaa86f5ea1f2d8e8c",
+          "source_index": 1688,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 245,
+          "prompt_id": "79f28a7f5ffc5b9e61fea695e760611c2c7d6864747c322599caf9b151c25ffa",
+          "source_index": 77,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 246,
+          "prompt_id": "17be97f86118261fbdaa0a98c11620030fefea26efa2d1174a729140a0050f26",
+          "source_index": 1029,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 247,
+          "prompt_id": "a0bdd6e1426288b4d7c63ce82e7a74bbde5ad2fa38246bc9199eb2e475e611b4",
+          "source_index": 499,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 248,
+          "prompt_id": "15d5ee958bad8a2ac452ddfbabe48a6a7c1a67d6435ea9072ec314162310a967",
+          "source_index": 200,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 249,
+          "prompt_id": "ca361d1c9c08a62fed39a1dc98279c8b8c67fa646e283eef740518f6725b9233",
+          "source_index": 1552,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 250,
+          "prompt_id": "d995e3ae06848698448f0310c0956505e70240e048f520449e325f00ed1479a0",
+          "source_index": 936,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 251,
+          "prompt_id": "b3664f46a23569ee90b7b78559e5d26518b0ad4f2ec2c924149940a350d4c50f",
+          "source_index": 1499,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 252,
+          "prompt_id": "5c19a767e13ceb1d0799a2ba246c96aeff85359b7a8c7838c026b86ca1db38e4",
+          "source_index": 1560,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 253,
+          "prompt_id": "220af37676eb56740d09c2fb61787130a7f5182df356f5ee8bb3bee5a2020a63",
+          "source_index": 774,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 254,
+          "prompt_id": "6f0d9a5c3f6b412c13c065f75b30d4341e88b6ebe13859cd28ce373db6e41f36",
+          "source_index": 976,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 255,
+          "prompt_id": "29f70db6056f69ae970022ab53486cd0c8afbc13fa527b26b738914f116ad459",
+          "source_index": 630,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 256,
+          "prompt_id": "15051e762dab774e7d1a6f0f30698f932b2c635565c55b5d68efeb675f725c21",
+          "source_index": 270,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 257,
+          "prompt_id": "129aa483848064ce120118e29fd564a96e54ffa4d81c5e85f69c9e304739b10d",
+          "source_index": 1581,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 258,
+          "prompt_id": "be262df45f04ab93b838664a7235f420fc8406c73e0af92eda76f25b52d5ea3b",
+          "source_index": 395,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 259,
+          "prompt_id": "73bad68b8705689e6089d76f7508e9671239cb03d43fc5b34f51be719052fb3a",
+          "source_index": 1147,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 260,
+          "prompt_id": "a1c9e8c224b0eb22ff2c9f3fc28bee647faeeee4ca8fef813b99b2fda3718dda",
+          "source_index": 1728,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 261,
+          "prompt_id": "7807b6ff8e427c8210496aae6436bf8b421498e9fb183287fde1cb3be2f7fe8a",
+          "source_index": 1826,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 262,
+          "prompt_id": "4841f81014d2c936c1a63a3c43bf98e3ff015ee084056f26d1c1b8c71514ab96",
+          "source_index": 351,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 263,
+          "prompt_id": "da7efb05c9561254cdc8b7cbfdab9c6ef4f1b778adece9cb3307f9eb83790c26",
+          "source_index": 1075,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 264,
+          "prompt_id": "6685ea033af5120dcb8e59db330e5f3b19801676e54c913159e8f164006543a8",
+          "source_index": 101,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 265,
+          "prompt_id": "5fe750b9f9e3544656c6af4a0733619a0db0059291c1dab7f9250386daa8ca96",
+          "source_index": 1445,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 266,
+          "prompt_id": "aafd8f6c7458e2a8f1c9f148c76c200b9a9b135337202cff5bb48ba9c917a7f0",
+          "source_index": 1799,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 267,
+          "prompt_id": "3d55838e868095eaebc0114ebfd6b83b2f3a3e449688b8a6c98dbc6c130c7673",
+          "source_index": 294,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 268,
+          "prompt_id": "7fb6a6358507c651e8df5f5bd632242b8a23509a13e8888869dcd187c637267f",
+          "source_index": 1489,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 269,
+          "prompt_id": "cd7e76a4d20296d9f55aa09ccd4eac24e12f0ff834b66423ed20a34e27237c6d",
+          "source_index": 65,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 270,
+          "prompt_id": "a17de0b93d0fa0647bb76d321ca2c4c4992d694e08e6fc9b52ecd36ba11fec89",
+          "source_index": 1794,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 271,
+          "prompt_id": "ca443c9d85630a105d48ec082be0762fac21302edafd52c0625634d79d32b1fe",
+          "source_index": 1518,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 272,
+          "prompt_id": "f4f4c3cf74765eab1f5e06cf4088dd107b7ddf56e62d8f693485913f37ac8464",
+          "source_index": 508,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 273,
+          "prompt_id": "93caf967eb5be0e7700fbec9176be10f6d09f64af8c32b691d1740c247f08269",
+          "source_index": 831,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 274,
+          "prompt_id": "243f625ae4554c0dfd2b538100e51db17adaa7e8e81936b1f6fc51696f7fa68b",
+          "source_index": 451,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 275,
+          "prompt_id": "6da92b1b6fc135a6904c71c00dcb956617b5e171ce98e7b4ec0d1a2dd37c2fb0",
+          "source_index": 96,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 276,
+          "prompt_id": "56eb7282c8f703ebdb5753ca76496fa3c76b61f70cbf941b9df6ebc3471ba95b",
+          "source_index": 833,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 277,
+          "prompt_id": "48c3bf9c2951831c51b6f8c393d618c7b6b7c67a692a9615bc390155109cde1b",
+          "source_index": 1638,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 278,
+          "prompt_id": "f759298865b50c14e75291fc1b5a4f59706ca34d07b313018e7cefc60188203f",
+          "source_index": 1987,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 279,
+          "prompt_id": "78bc06056b0fb0b54d1d61d894853829b9f3e3aa3820546bd356f84bd2b44a26",
+          "source_index": 881,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 280,
+          "prompt_id": "e328cc982fd207aa419ab2b289c4510d2e95a7988ceccf3fb816d722e271c684",
+          "source_index": 1780,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 281,
+          "prompt_id": "4fc17a34bec82d3ae2783decfc5c03e13be631a45f86306a38ec11e43082f2c5",
+          "source_index": 429,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 282,
+          "prompt_id": "aaaa7d1fd432b9b0b7d686aac4962d96d3a843e0f4d1b5849ae00e9ab1a9c3db",
+          "source_index": 467,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 283,
+          "prompt_id": "9ceea5b1aeedc15a79a010648379410f90cd898e7ba2e1b2b267e849a8b02816",
+          "source_index": 514,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 284,
+          "prompt_id": "2708b4a670f35fd3c1065f430d700cfe7cb2d20aeaa3ba7214e3cb411d132648",
+          "source_index": 1689,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 285,
+          "prompt_id": "d975bc30b215b389c364e077b3b0d10c69060fd971caf16f85fca7a05c98103f",
+          "source_index": 1717,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 286,
+          "prompt_id": "53065b44bd2b791db6b3b694f12ce4d00174b172fd8176c691c16c3f2c819d6b",
+          "source_index": 724,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 287,
+          "prompt_id": "7ab76d8d6f7b61e97d4dbaed5d155c9cf4fba7c0ff787719e40a67481ba218dd",
+          "source_index": 992,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 288,
+          "prompt_id": "13440ba128b4efe82db8adc1d6f78d233a558d54b3331cb339371062e63a9f7e",
+          "source_index": 1444,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 289,
+          "prompt_id": "ffd50b8c3b6075591fa4d41cd00eb1fb1ea8fe028003b6ded259310b18846c8c",
+          "source_index": 743,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 290,
+          "prompt_id": "295d81c7643e12a8817bb6c78b753f5a8009b6a3d9d98441fb023bec8117db72",
+          "source_index": 529,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 291,
+          "prompt_id": "21b9f7d1aa6c9fb5cc7a3b10b3de906b02d75411837dc7781ca80bbe25eb3e9a",
+          "source_index": 337,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 292,
+          "prompt_id": "d70ff8d70121e47d497f3b6cbcd88d3d945f601ba866949eec16674d57c3d9e6",
+          "source_index": 223,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 293,
+          "prompt_id": "b308a31d0770d0cb2bb23870e3d402d845823536ed6b8ff8ee565883c3cf2053",
+          "source_index": 1144,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 294,
+          "prompt_id": "814b350320734fbd619b895fb11f9950352e2bed160d42f0a3bc5a4a443a4f2a",
+          "source_index": 1352,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 295,
+          "prompt_id": "21714744de1fac2c84ad03a2810575082638fdc247eaed43b038d0ef906e83cf",
+          "source_index": 1980,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 296,
+          "prompt_id": "21f5d5d038122239cf01baee9857c2906a60b146f41d5c03b7a20be1331a195e",
+          "source_index": 1561,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 297,
+          "prompt_id": "7eb9cc7112d933ee3bc485835c151ecfc9a52e12e08e5da3b42605ffcf8a007d",
+          "source_index": 1001,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 298,
+          "prompt_id": "4a072fa9c98d92e1cf781d863d0ad290d145e978e8af8db3d8102fdd42e46aa6",
+          "source_index": 999,
+          "source_split": "test_prefs"
+        },
+        {
+          "data_index": 299,
+          "prompt_id": "6ab712edf6d634f68f70c00d8b8bace07e0440f28d289c5bdb2cb95d62eb3897",
+          "source_index": 1622,
+          "source_split": "test_prefs"
+        }
+      ]
+    },
+    "dpo_length_eval": {
+      "path": "/content/atml-pa2/data/dpo_length_stratified_eval.jsonl",
+      "sha256": "89e2c56ee2fdaec75fcf1f56ae4802d710ed4ad08f127e097990923017ca7405",
+      "num_examples": 246,
+      "selection": [
+        {
+          "data_index": 0,
+          "prompt_id": "455c67a88d63f1db574d7117e7cc1dcd8aec226536d9f041cee97b2462ff7473",
+          "source_index": 1858,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 1,
+          "prompt_id": "987a33aa46d7ce6c6c13aa2898625cd28d9b7ca68a7e856edf6314ebea5fda4a",
+          "source_index": 1970,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 2,
+          "prompt_id": "b3664f46a23569ee90b7b78559e5d26518b0ad4f2ec2c924149940a350d4c50f",
+          "source_index": 1499,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 3,
+          "prompt_id": "935c3fb7b0262e9a0eeea69e5a8a27a1532c04f7b1cb45d9e2b706cb71ee34ac",
+          "source_index": 1759,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 4,
+          "prompt_id": "1e2e0f30e252bcfc26f3e20a3a08070fe4f142cd362bdf26e0d330d5045460db",
+          "source_index": 1704,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 5,
+          "prompt_id": "264c4202708db1774a54c377382cb48929be8a8d658c4d790ffcde85d2799a21",
+          "source_index": 1082,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 6,
+          "prompt_id": "d620fb740ede53790a6b8f62c8ccce6e66a76fcaa5f20d40b7b2d5d2e00de601",
+          "source_index": 1540,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 7,
+          "prompt_id": "12a47c6d3dedbb86cff747adcb090026e4b772396f8d58ab6566768967813b0f",
+          "source_index": 452,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 8,
+          "prompt_id": "ca361d1c9c08a62fed39a1dc98279c8b8c67fa646e283eef740518f6725b9233",
+          "source_index": 1552,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 9,
+          "prompt_id": "476264e99d0167d50fc26a0bcffefed35b6a391e6476d2b6a972439f252bd1c6",
+          "source_index": 323,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 10,
+          "prompt_id": "35f2d06db852715d1ec427e53dad9c4a746b5e20f0a6440e8bd9d21be541a362",
+          "source_index": 1988,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 11,
+          "prompt_id": "d1b23b78c916dc2d436617e11105e06aac9a960224c16788f56cb6263bd73b9a",
+          "source_index": 297,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 12,
+          "prompt_id": "e1ba601807a9b2ac083e7e87eb2e4df0b36158cc3ef1291bcd25321a408a8425",
+          "source_index": 1919,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 13,
+          "prompt_id": "cda15f92efbe0cedbbd180d6cabd839f70315da75def590be11f8760997efd66",
+          "source_index": 1568,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 14,
+          "prompt_id": "537bc1d2cb178f73911986e471255d3701a8189bf776c02522020340f91a94a6",
+          "source_index": 1022,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 15,
+          "prompt_id": "782ec2db1c0f13d4147b05577186a2b03455e721ef654b3685a729228ed86652",
+          "source_index": 975,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 16,
+          "prompt_id": "43c032e89cca4d98bdb51b8206ae27a907e47d97474ca89796dc919e392c8000",
+          "source_index": 233,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 17,
+          "prompt_id": "e64ed52b2b74c3b8fc2d9e135c7b9c5d7975282d892d5e11ff27ee2bc40cfdbf",
+          "source_index": 866,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 18,
+          "prompt_id": "24a6ea2f7c9f8aba532a9cad74bcc5fd813244303b803be705e1c6e375e4593b",
+          "source_index": 1635,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 19,
+          "prompt_id": "e104856218805069891351a4b4417f54189d96da4496f9d3682be46462205de9",
+          "source_index": 391,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 20,
+          "prompt_id": "051f3b0ccdf871bda7148581d33714c35a0ba7481286651b563441a15c07c4d7",
+          "source_index": 558,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 21,
+          "prompt_id": "f178023741eb3e13940d39867dd9b9406af8568a9cf7c6bba2e0395751bb41ac",
+          "source_index": 1028,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 22,
+          "prompt_id": "7642c1aa1c6e3f01760bfc976384e982cbbc181431258fff645215a30610b31b",
+          "source_index": 1957,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 23,
+          "prompt_id": "ab7cd65e86c5213cdf5f1fbd3b34b1d803d9d6141b1a5079633d962aeae5c0e5",
+          "source_index": 1076,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 24,
+          "prompt_id": "1877a654dd3df2175a7bbc88917a707430b88e129bd9cc261b575f445edba9df",
+          "source_index": 267,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 25,
+          "prompt_id": "129d10b8724ba2b31a1044dd610ce85eab45798ebd7351f04fd05e2e997e4472",
+          "source_index": 339,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 26,
+          "prompt_id": "39b0eb8a9f0945ddd5c9aebb4cc9f42c1b09c9901906075858edfcd42570eca6",
+          "source_index": 1772,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 27,
+          "prompt_id": "506e15c980f3a3df47c3ebf2d1904f71e7a8023dd1ae30d8eccefaabc2ddd940",
+          "source_index": 252,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 28,
+          "prompt_id": "6317086f53ad82588c2a750b28c40c9d25e7c091387514f3f5071b06e47712c4",
+          "source_index": 412,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 29,
+          "prompt_id": "ef40d6359b0818eb64cbc45f61715a70687e9678cf7f1f7a00e4a55409a4cd6b",
+          "source_index": 1412,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 30,
+          "prompt_id": "0c29b20408cee5824b2f5ad62c859d51f95056300b5d2c2f0ef6acc206efd087",
+          "source_index": 365,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 31,
+          "prompt_id": "c97610f49d8b74bc9fed000e7155c7b8413e0e8ee6f2d61c245c0542ea61a7b7",
+          "source_index": 815,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 32,
+          "prompt_id": "ae9e0790bd5930aa57618304f9a3cdadc1fb51cd3eed30b38a921883396a3741",
+          "source_index": 1281,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 33,
+          "prompt_id": "1757f6ff3943c506cb163a2d2bc2dcfef5a4ff9f3a10e7140f29e2d3433a6b84",
+          "source_index": 713,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 34,
+          "prompt_id": "214f84f607754cf987b41ec12f2b5f084b463863acbd5ce6ae301b3efa84ec00",
+          "source_index": 123,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 35,
+          "prompt_id": "5534f10679088cf9dffea70f5bc351a14c0feff324255da54d94b56a51c9ca03",
+          "source_index": 616,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 36,
+          "prompt_id": "83abfedabadd313c18f608bf6f783be526b7b9e9c9b5b1a7d9adc6d6919e4ec6",
+          "source_index": 820,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 37,
+          "prompt_id": "0fcf9dede48ac5c6a8f3cfb96b4e53d5bfa51cd7b92f06e3d3fd47a2d03a0aff",
+          "source_index": 525,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 38,
+          "prompt_id": "5ab9f993cf103c080ef0ebc99cb8ca34b93c4b5b3d87740f47c52dad99d19a7e",
+          "source_index": 345,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 39,
+          "prompt_id": "96c539af8e17f6cd3cbfb757c3f14bab6941a45bebe3c08cce71a4fd97d83c1f",
+          "source_index": 360,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 40,
+          "prompt_id": "6395767acdb48206675504d8f0aa12e4deb106f2b9cf9aac946bad3abce94fc3",
+          "source_index": 636,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 41,
+          "prompt_id": "d10eaf82a4b48cf40fcac703bd2ac94e604c162a79151926db176ed7044ffe62",
+          "source_index": 1131,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 42,
+          "prompt_id": "f1e8db4b26bad99ead041b7e9d5e2f36fe708ed83dc754f4aa74c08077334be5",
+          "source_index": 1756,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 43,
+          "prompt_id": "e5702fd90e0b22eb52b4b6ed0bc8aa221ae512a3f57d1dc6619884ecacd5881a",
+          "source_index": 1476,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 44,
+          "prompt_id": "02c0aa618fc69870bcb80b61d6a758947cc4f68cc66c07b69339011db38b6130",
+          "source_index": 1559,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 45,
+          "prompt_id": "a17de0b93d0fa0647bb76d321ca2c4c4992d694e08e6fc9b52ecd36ba11fec89",
+          "source_index": 1794,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 46,
+          "prompt_id": "db3c6291ae1052e473c32879594b902870c1edfb310dfc54a0c28b8378b09b13",
+          "source_index": 1575,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 47,
+          "prompt_id": "33758ad171dea019e01fce109f77d47f9e845826b4f9f9a4df1c298f62903a3c",
+          "source_index": 24,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 48,
+          "prompt_id": "a12b6562c63c5b380303145fc080bf6e124d50b0e0a5303295c41d68b103c617",
+          "source_index": 191,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 49,
+          "prompt_id": "178353cbea22f62f84712700bd5e3cf3a588310b5e4d23f76167b4bda2f15728",
+          "source_index": 563,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 50,
+          "prompt_id": "920603364021701350a2708ef788396c79d2e2b7ae48519bad2b09beac27fbbc",
+          "source_index": 693,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 51,
+          "prompt_id": "1291df20ca229095ce11da54804a1eafab76a82178c2cc3976ff53f252ec61b0",
+          "source_index": 217,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 52,
+          "prompt_id": "51c0642604fb7736168fac0bf66723529dfd08bad84d1495d96bc34c74df5c78",
+          "source_index": 1577,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 53,
+          "prompt_id": "a50fddb7559def988d1bca5a726ef00f021ab61e24e3404621a52f9ee9b50fdb",
+          "source_index": 49,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 54,
+          "prompt_id": "6ad7285cb09fa2f9ab40a7f1fbcf26942d0867d473788d5657bbcabb7fd7efaa",
+          "source_index": 785,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 55,
+          "prompt_id": "17daf7cba857e4c08073d4eb7ea0e099da5ebb2d2b509926ae7cce89970827eb",
+          "source_index": 1181,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 56,
+          "prompt_id": "1480bfd2dcaef086b0126d28b17b48da45e79735022928e3e88230bacd2aa145",
+          "source_index": 469,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 57,
+          "prompt_id": "3dea54dc610518a8f1bc4f22ff64724f19f2ba409e188d55812b3d1c77abde40",
+          "source_index": 159,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 58,
+          "prompt_id": "8d57703f4df3951b5f2bd4f3739715016608628f33789c6782b4092326cfd710",
+          "source_index": 1346,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 59,
+          "prompt_id": "78042aa911b4676d924d1a7d29c7c33bc572011e869b6ca12b35673bf3fd98be",
+          "source_index": 1942,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 60,
+          "prompt_id": "73d34feb9a00f4023d5ac83c5685ead8bb01b606249a5b4415b901bc9c237273",
+          "source_index": 1856,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 61,
+          "prompt_id": "1f7a2191a9fd77990ea45d600a9e5bbfd98f8e6f9ca7db9a5bc45cb051add58e",
+          "source_index": 554,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 62,
+          "prompt_id": "e9f329e53c0ace3dc96c87fad621b6aa921b78cee94e620b6655849aab05f473",
+          "source_index": 1077,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 63,
+          "prompt_id": "b0c2c40299e421e0505f95fbd33bf30df802f3280273a199122601dc776efda6",
+          "source_index": 1519,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 64,
+          "prompt_id": "6e3af4352050918838c0b8d4f18cd5f636d9e701a06b327287da96c874d42cc2",
+          "source_index": 547,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 65,
+          "prompt_id": "2f9fd05737c9417c929f9a89bc1e1967bae8f799e62d71834d09e86bae52401b",
+          "source_index": 1790,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 66,
+          "prompt_id": "d9b5ba881115e542f1a9c1fe2040b1d53cc639b6476d436aedb4c35830d2f0fb",
+          "source_index": 1574,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 67,
+          "prompt_id": "48b3ce58be84b3449a6e0838f19a5ab3f60f87381cbac7168a267e43047e89ad",
+          "source_index": 1596,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 68,
+          "prompt_id": "98feb97fff7a558b1bdfcd5b574b5e9e78d8353d624b50a476878e7645398287",
+          "source_index": 1443,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 69,
+          "prompt_id": "801c7a49a40bfe05b462600464f5c679ea51d60a9682ca95fc5ac02382b7d032",
+          "source_index": 609,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 70,
+          "prompt_id": "1488580ec421ed37cd1e01e1cb067a07a98716edb604bc9daac35c25b9fb1a5e",
+          "source_index": 1529,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 71,
+          "prompt_id": "7fcffb0ca5bfabcbbaab72128c2974217a76800d55277a2e263210d974da42bb",
+          "source_index": 648,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 72,
+          "prompt_id": "23deca5cd78f8862f646f461185e391c0fcb471e2171d85e5c4dce1eaa086ec1",
+          "source_index": 753,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 73,
+          "prompt_id": "d845667b8654f3116e4c6060eb933fa691bb3f7e65b2ca0081ca06e9c965b3ea",
+          "source_index": 1143,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 74,
+          "prompt_id": "7306124d5b0716446b5058c6e73648574480453c7baad2d093eaaa854d4c3f14",
+          "source_index": 946,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 75,
+          "prompt_id": "31d22af70de057401fd5d531825c458177f716e0408c54392695a8aeba62cb15",
+          "source_index": 496,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 76,
+          "prompt_id": "175ce5926626b171f863baf48b4337e2a17a5fcbf04b571e1e0612c7bd12d365",
+          "source_index": 1474,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 77,
+          "prompt_id": "db507ad857f12349468ed68e7a1374345503bdfd242a5073251dc2c10be0e173",
+          "source_index": 586,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 78,
+          "prompt_id": "1705fc9c1ca4d773dcc5fc1102cc44aed14914a6735b09151f509730a79297f3",
+          "source_index": 1589,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 79,
+          "prompt_id": "f218c07ab165cf2eedf6998386826b75e214442cdcdb89ad8f81373285177ce3",
+          "source_index": 1178,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 80,
+          "prompt_id": "0224716f5a6d92cb3d2b24f3d892bf98bafaa0f4012d273b9ecd67395c386a0b",
+          "source_index": 644,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 81,
+          "prompt_id": "ae12de1584037125ac418a027b79f5a33612a8d208da402fd9b91a73a6ac9e1b",
+          "source_index": 1515,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 82,
+          "prompt_id": "c1b62ad99f9cd90a4eaf69eb724e289ec436da787573f2a2e28ddc1df8e55d40",
+          "source_index": 600,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 83,
+          "prompt_id": "caee102ca96be4fca636a166fe18a43b4d51dcc2378092fe89aab8aac340de13",
+          "source_index": 562,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 84,
+          "prompt_id": "cb18a58790b7182b0ddb73ea89f3b04fc98354e682317b3d24587b0122d88673",
+          "source_index": 458,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 85,
+          "prompt_id": "5bba6dcec370a432a64fb5b9dd9d23b3d6efa936ea3ba7dd0bfa83014c49f700",
+          "source_index": 1375,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 86,
+          "prompt_id": "a1c9e8c224b0eb22ff2c9f3fc28bee647faeeee4ca8fef813b99b2fda3718dda",
+          "source_index": 1728,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 87,
+          "prompt_id": "55a916e05b78d4bef8b2c041549af42592ee388041332c741a93306a5d6e94f5",
+          "source_index": 570,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 88,
+          "prompt_id": "816d427fd024859df1a5eb44dcb52bbe7ab01d3324d57e115e60288cbe2ff04e",
+          "source_index": 43,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 89,
+          "prompt_id": "5cd9fb2712e621a6e7e8b9a13f331022ff99efe86aff8bc0a5681e2300b4d484",
+          "source_index": 1480,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 90,
+          "prompt_id": "4d5f6fc60566e1b7dc099063641d46ac548cf04b29af9eb4b7f63a5dd7a1a479",
+          "source_index": 712,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 91,
+          "prompt_id": "c527bd922ed586b2f8b602e44e70bf50e36bd1f2fff2366f22c57a0693c2ff64",
+          "source_index": 1839,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 92,
+          "prompt_id": "31a88697ebb1532aa8e1854dc2a4e188c0c99691076a3ec6583417bdb5a6a627",
+          "source_index": 594,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 93,
+          "prompt_id": "33f060280aa307ebebd2e0d44149c40d449101039169263824f8018127c2ee23",
+          "source_index": 431,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 94,
+          "prompt_id": "caa2035472c9277f202043d86ba67daa49b3b8361e5d78817b337ac7e8874409",
+          "source_index": 1755,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 95,
+          "prompt_id": "367a842a5a1b3d7df1f7ce40dbf90d4a2a458d87b26ffa97ae1a902f20e4256e",
+          "source_index": 1148,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 96,
+          "prompt_id": "e29222d78e5cce2a1533ac756ae88cddc3209dbb8602edbb24d5d7c6d51965d1",
+          "source_index": 1819,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 97,
+          "prompt_id": "b895054c1d695281746a21f8d891bdb86c2c2c1deca3537aa1c53d73ad3a9143",
+          "source_index": 1424,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 98,
+          "prompt_id": "537aadac3214e7fd7901fe1ef23934d8416872c55027276099a28e21c0001ecd",
+          "source_index": 1565,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 99,
+          "prompt_id": "b8ddb4029e5829c9aab98c217e7d4abb1805c490c708c2e29d339ce71e59e5fc",
+          "source_index": 155,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 100,
+          "prompt_id": "9a2278eea4d1cce0722bccf6224075a8f907357853fecfc9934eb0f6fc233e1b",
+          "source_index": 1376,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 101,
+          "prompt_id": "c821414f73ac2bc8c7c67b5ae30f90f7d9bc02d38344241b256b9b65d752daaf",
+          "source_index": 1197,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 102,
+          "prompt_id": "17b31ddce9a21db8fb919583ca91534d7c6ec48cdc166ed89e4dbcedbcf1d01c",
+          "source_index": 1744,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 103,
+          "prompt_id": "db15225e8abeaf64c09da0ab7d4bd674b8734060a8d442e0559f3a6966bdba9e",
+          "source_index": 7,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 104,
+          "prompt_id": "4d117684cab502d74991a9bc6e3c45342d219c82b2c6cbfe00dca52dbf097529",
+          "source_index": 1895,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 105,
+          "prompt_id": "93d4bea4a2ff42c29ab39eb6d591c14fd0e256f276ae22236d1a91a0dcb02a69",
+          "source_index": 1642,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 106,
+          "prompt_id": "204d910431342b3ba7e0be0b5a6391e8c3eae2bbec919c304387c5d0150105b6",
+          "source_index": 1648,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 107,
+          "prompt_id": "b892e9ea0cf89e41d7e27362eb8f01811fe14063a855f7632f336e728cb10364",
+          "source_index": 1681,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 108,
+          "prompt_id": "3db774cae92108cac38b448b79003d176c357ba37047247d16b0c54e988cbeac",
+          "source_index": 326,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 109,
+          "prompt_id": "32494976843bc611ece7f6cceb9c8b6775e84e3f36143d3812550dbfdfd3ada3",
+          "source_index": 934,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 110,
+          "prompt_id": "d00e953c7dcfd9e466ab2c987512afc4417efdd5091fe238ec2a1749d2929959",
+          "source_index": 1497,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 111,
+          "prompt_id": "e9b2ea5f7d26787a5d0c884d8f835cd05aff52dd2cdd8d9b032807e08d392335",
+          "source_index": 1990,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 112,
+          "prompt_id": "5a69a1aaf348618d5552e167819ed8ac9918191f68981c1c479d2d23f35aef26",
+          "source_index": 557,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 113,
+          "prompt_id": "d85928085bb78b36d252f52642405036d50d9b7069ab40bf59cfb8f0d40f87e9",
+          "source_index": 1696,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 114,
+          "prompt_id": "fbe41887156e9a40487d626703d309726ffd4cbf2a045d437c9ca631d5c9005c",
+          "source_index": 293,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 115,
+          "prompt_id": "6be7b230803651e456ec3e460330942b9d09686d6bcb0556f6d25a364c299619",
+          "source_index": 659,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 116,
+          "prompt_id": "457b4bdc806219f8e55669e1a6278e3632c2742af936915ad8450264aa9169a8",
+          "source_index": 1629,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 117,
+          "prompt_id": "d9d7e941c3f1fd68b6f6cc5e7e442aeb169010fc561b912597675b4c82f33b32",
+          "source_index": 1321,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 118,
+          "prompt_id": "d308da7d7d4348f3021d791f8a1d234ed7c586f74e83b8feebd433073206e494",
+          "source_index": 1935,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 119,
+          "prompt_id": "ddc67a61c154c96a06f866529589222eae778211155cfe0612e4ea21632e7647",
+          "source_index": 1643,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 120,
+          "prompt_id": "dccb5c741bb39cbfb540785d1610fe40e868a05617084e017b0ff413b76e0fb8",
+          "source_index": 652,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 121,
+          "prompt_id": "cfe9a3a2182c199a85be930630ef00fbbab9bb1cdccfa4c1a20b518407e4ca4e",
+          "source_index": 228,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 122,
+          "prompt_id": "1263e41f4484ee5f92d27601dcf5f4290e3aac3bded971d3e50d07d89425bc42",
+          "source_index": 358,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 123,
+          "prompt_id": "e943441f467478f47c86fa75b23d519b68adea52f38899de5ecc77c06fbbe529",
+          "source_index": 824,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 124,
+          "prompt_id": "918904306091025d9faed3c08c4f823e79b005cf1e4d3cddfbf85c0a7e21dc75",
+          "source_index": 1511,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 125,
+          "prompt_id": "a80e4a40e3567033df8b83c587de711e72a346ce4c97c98232ad8ef8d3e69d5a",
+          "source_index": 1712,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 126,
+          "prompt_id": "4932085d69d468ad11f9b4bb78cff6aa23842460a630e4b883db86145fd13901",
+          "source_index": 1268,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 127,
+          "prompt_id": "58d8a22fb6688745fd9d0397484ef5dc8ea4d6ab16c6a2bcdeb0b3fe34fb563c",
+          "source_index": 205,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 128,
+          "prompt_id": "2894dbb726d3c81188346bf77db3eb5045e344df4eb774ecc9fbaa57f62f3e71",
+          "source_index": 572,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 129,
+          "prompt_id": "8ce72460fb4f48099e7c18967f61443951b25f7241b0769bfdb4dc92756dc49b",
+          "source_index": 1997,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 130,
+          "prompt_id": "35a83108882fec52a6ca1424e81650ffff8cee65becbb68a1272fa0a508becfc",
+          "source_index": 354,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 131,
+          "prompt_id": "9b41dc97fbca381a42cff60c7c80912005c0935eaddf6a7fcb4a3a10f7afb783",
+          "source_index": 1930,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 132,
+          "prompt_id": "48c3bf9c2951831c51b6f8c393d618c7b6b7c67a692a9615bc390155109cde1b",
+          "source_index": 1638,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 133,
+          "prompt_id": "deefd800abafd099f9a0369ccdbac62d63edd1eea8c9cbdb47f7cb699d5379af",
+          "source_index": 1934,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 134,
+          "prompt_id": "01ac8dc9e3c8534990b76b179f4576a9ed1936066c6195c2e500f698c6110730",
+          "source_index": 1039,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 135,
+          "prompt_id": "d50257b130a2d4f5b644f037ec80071f0cda88ab72617e0e55753be2fc1322c1",
+          "source_index": 61,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 136,
+          "prompt_id": "243f625ae4554c0dfd2b538100e51db17adaa7e8e81936b1f6fc51696f7fa68b",
+          "source_index": 451,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 137,
+          "prompt_id": "5eb104ab2c65ab312f62e795f64d2f14ac0f2bb98a4558ac90395a1a7fb59b69",
+          "source_index": 302,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 138,
+          "prompt_id": "a6a846d8f93c6c6e7ad23a44dcc35c8f1fb6855c66ef2ea248625360a06ff875",
+          "source_index": 944,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 139,
+          "prompt_id": "77bb3bf668caf8bfc3deaa9d2b1c937fb70169912d49804c9e62bd9b934f1e18",
+          "source_index": 638,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 140,
+          "prompt_id": "ae10e915c295cc86b64dbca693c148cf3c43271de1fe83511377e957628a063e",
+          "source_index": 1868,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 141,
+          "prompt_id": "05013ce7b1d8ac982a4d81c1f5305f32c1bacee0b5f9dfc2ae82ea8e8ddd78bc",
+          "source_index": 1884,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 142,
+          "prompt_id": "f6276f20fa01e6c6c3dbb377ee7c4eb8053db53d3265d55cdcae7aa12d6eb41a",
+          "source_index": 275,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 143,
+          "prompt_id": "0e2435751579f9ad3d5a0ce5080de80551d290d04a335d6e2bd5ec037ea67f09",
+          "source_index": 368,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 144,
+          "prompt_id": "bcc6aa804c6dc0e303744ef3d1f598a4a6ed395c8ac6ef668c68262fd9adb6f5",
+          "source_index": 1580,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 145,
+          "prompt_id": "8ce93a8135dffa7c1b62ce11af88cc796ca88f354b1393c2986325b32c8cbd1e",
+          "source_index": 1899,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 146,
+          "prompt_id": "f5d3fdfb2400deb0cb097fec90922423b474832dfc2c43f5b7116abc814e37ba",
+          "source_index": 1876,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 147,
+          "prompt_id": "1d0765cc5f758f36b72ae8d00fefd2e3d81c23c750f99b0a67d1854f89ed09dc",
+          "source_index": 75,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 148,
+          "prompt_id": "115d15136d76cdcdfd3e4b325bc68d0d6cf7113f9210679185ebbd4bea311139",
+          "source_index": 1481,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 149,
+          "prompt_id": "58b4af6862291b6efef9ef2d31540fa37ff7e253f6de51be2257faf028148f24",
+          "source_index": 162,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 150,
+          "prompt_id": "a6541ef468449e3c05e199351cecb17c3e2c6bbf754de21005bb2ec7df175676",
+          "source_index": 224,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 151,
+          "prompt_id": "60e68c887d75b3c3baa1cf0bb47d979fc3cdb6c7211f8b74cb1c48781f246577",
+          "source_index": 1354,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 152,
+          "prompt_id": "b7744cf1ca9cdf963349bf5556f0139f3626e7b3b8c0f97881e83f3e7e8c694b",
+          "source_index": 258,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 153,
+          "prompt_id": "455786fbac23f39ec7a58a85e8e996a940628b564ba957886b009d6c3e720fd9",
+          "source_index": 274,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 154,
+          "prompt_id": "ecc5bdc3e5755616e1f48613ca81dd2532ab19bc726a9ceeb5ba5bec74eda418",
+          "source_index": 72,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 155,
+          "prompt_id": "ccc53f000d68d160e4596d6d14097aadda8db7b7595bf901ce55f8e50b4902d1",
+          "source_index": 689,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 156,
+          "prompt_id": "3f67af96b2fbd096c015c56e986365f34f3c48d8f48aa42ac0a3a148c81f64ea",
+          "source_index": 915,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 157,
+          "prompt_id": "53065b44bd2b791db6b3b694f12ce4d00174b172fd8176c691c16c3f2c819d6b",
+          "source_index": 724,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 158,
+          "prompt_id": "642f27f9f7422272247b8c7686b3ed9735b5d6bdfe5fba4fedc252b3347dd0d4",
+          "source_index": 1747,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 159,
+          "prompt_id": "3d55838e868095eaebc0114ebfd6b83b2f3a3e449688b8a6c98dbc6c130c7673",
+          "source_index": 294,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 160,
+          "prompt_id": "8ec0764bf061ca38dcc3f8ce94277b7a90433ff09db3e3cc3f2797742754094a",
+          "source_index": 1064,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 161,
+          "prompt_id": "e0dbf8aeedb9747117efc8a15c850bd9a50d8e17ee3ee54728a5310bef943776",
+          "source_index": 1870,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 162,
+          "prompt_id": "f28e9624684a4a4043c4e04d7f6e848eae67730ca5b105a5031358c898ae7872",
+          "source_index": 454,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 163,
+          "prompt_id": "334e240b25099dde0ea590ff0fa59bcc56bfa1c18f9ec5a96004649195d1aee2",
+          "source_index": 863,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 164,
+          "prompt_id": "faff5c962224bd104f4c6eb8c00bcfd84c37b29d3de55e600ccc3cc3ea4c3f99",
+          "source_index": 175,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 165,
+          "prompt_id": "ad32116d0885b4bdc7950150ed481b826a8d3c99cd4b4683661812ac4d096d70",
+          "source_index": 1259,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 166,
+          "prompt_id": "dae2779f605d985498181eaf155d7ce98bd10db46dee5f451077aabf4be26336",
+          "source_index": 1462,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 167,
+          "prompt_id": "bafb4bfefaa674b232b009e73cc590ecc6824e971b248c2b03ae29fc652965d7",
+          "source_index": 59,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 168,
+          "prompt_id": "8854d06d15cf0cc4829ba9dd62c402fa9f68f578da375bb6aa391ebb3ca5507e",
+          "source_index": 1395,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 169,
+          "prompt_id": "b5b9e344f420e31f81ea6f18887b3153bc8a7a105a6607d7dee18e0ec592de67",
+          "source_index": 1222,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 170,
+          "prompt_id": "5fb3cb108ec5c6da3464ab182c01907528ded34845a1bc92071d6f9a94a11e36",
+          "source_index": 1160,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 171,
+          "prompt_id": "35ddaa537189d52fa903e147d56da6aa5a42cdc596e4d6553ab54d47d666bf27",
+          "source_index": 1726,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 172,
+          "prompt_id": "d83fd7656543e3e492b1c4b292d9c954b6cffacd8286b4bdab7247b39e8b7232",
+          "source_index": 330,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 173,
+          "prompt_id": "28f794bd531934d85204af09e5084c87d9bf9cdf7ffc1b8b24fd54748c9359a1",
+          "source_index": 1233,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 174,
+          "prompt_id": "72a7a896df9c82c706d0a217123c3999575a7200713f04eaf883e98ee65a8011",
+          "source_index": 440,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 175,
+          "prompt_id": "8d9d80483a49b74563f45e0cf6609a0a03a27f38be718c4c48e5466d63dd4ee5",
+          "source_index": 1677,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 176,
+          "prompt_id": "39ba34be2cfce98c49596cc1dfbfbece784b616a1dc39278caf3f254dc6b4f2b",
+          "source_index": 972,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 177,
+          "prompt_id": "48644ed10a94609c1a33c8fb126dabd81131b0546fe18a5b0030d8870e9ffaf2",
+          "source_index": 1892,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 178,
+          "prompt_id": "11a3b52d1b81ab38a425536c3f02a3a03e59baa548c23d0872f14a617070193d",
+          "source_index": 838,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 179,
+          "prompt_id": "d135d67a3fb1bdfd7b8a372b127509c43a06fe798ac1f3f6ce3a2a52aef2ccc5",
+          "source_index": 1016,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 180,
+          "prompt_id": "e590bdb763eafff1363563313c316e26dc3fb32501770235c01150d095689f43",
+          "source_index": 758,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 181,
+          "prompt_id": "3ac0a148fb1592b5a7b566939fc4588f9c0da098c601f6aeab3f933b9cef4e98",
+          "source_index": 1176,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 182,
+          "prompt_id": "5c034f9cc74a1c8446231299058cd35b900519e7f83919f18a3effe4d5cff4bd",
+          "source_index": 1305,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 183,
+          "prompt_id": "57b6980f70e39b7cdf0cadc31b42d01af72b386eb268a32f4507fa6dd6894573",
+          "source_index": 80,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 184,
+          "prompt_id": "f7c9b3e29590943b38ff1b7fa5e8cb65e73d768907396029d5fe6855c963e9d9",
+          "source_index": 658,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 185,
+          "prompt_id": "2b2b49af18aacef60605bbe3b3b8a748cb334a14a851b72cf060c3716be843cf",
+          "source_index": 1224,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 186,
+          "prompt_id": "87f569f6fd3a581e2efd089524112b396dd455bfba81676b5efd4b54bcbe31d4",
+          "source_index": 1024,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 187,
+          "prompt_id": "53bb89c7d5d7bc0831d68490fc1e8b84e9d21a5dea7526ceb4d5dbf71f2ddaa3",
+          "source_index": 978,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 188,
+          "prompt_id": "70bdf46c4e68c84973c2a067550ecf4e01409c5b6c43e99a6b1d9169d6b82d30",
+          "source_index": 864,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 189,
+          "prompt_id": "1d6e87964996ded3c9a2726c9c98ef24089dd800afbbfcb6bb2ef39462836204",
+          "source_index": 1500,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 190,
+          "prompt_id": "b3f9c485b2434c41e60ee7bc1d2eafaab22e16cd0dc851be8bfbd90ab84241d9",
+          "source_index": 20,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 191,
+          "prompt_id": "77f1ef7f4ea1ce5e2be0b489556a343e431df5c1ff54022e1cf5e3be75f36487",
+          "source_index": 1981,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 192,
+          "prompt_id": "de96a689f880497e6eee61293bec067d21858555ad7d1b0aec2e5bd89c919955",
+          "source_index": 1928,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 193,
+          "prompt_id": "7eb9cc7112d933ee3bc485835c151ecfc9a52e12e08e5da3b42605ffcf8a007d",
+          "source_index": 1001,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 194,
+          "prompt_id": "4f33406984a815380d4d965e129edf01ce8beb36907d41345bf9af706d811dc0",
+          "source_index": 836,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 195,
+          "prompt_id": "b82c9e5a94c310109788e23c6638b41351823f2e253127b8a157db28296aa49a",
+          "source_index": 204,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 196,
+          "prompt_id": "3adcacefd86e5a2b085d0d467f3a6cee634c410d49c5d8f8bf4aafa9fc212c39",
+          "source_index": 649,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 197,
+          "prompt_id": "318d34270e67c271aeb9ba7531e0862417596d3a6bb118b777bafc37f46022a2",
+          "source_index": 421,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 198,
+          "prompt_id": "2fef26fac8ef63829981022b8a368881ad4f763b6dc2ac95f4635b014fbae12b",
+          "source_index": 1096,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 199,
+          "prompt_id": "5c19a767e13ceb1d0799a2ba246c96aeff85359b7a8c7838c026b86ca1db38e4",
+          "source_index": 1560,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 200,
+          "prompt_id": "8f907083b8ef810475f8a0b5844d1ac652045be69798f04ed516ada2aed717df",
+          "source_index": 1418,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 201,
+          "prompt_id": "ef8dc0933d9ba3d051744ae17c417d34fcdbdaaea59963af5ee68b8e5fb87544",
+          "source_index": 67,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 202,
+          "prompt_id": "634c38e8e105992862ec1b22d8d04be0c4b7235479dac76139e100770ad2a6d8",
+          "source_index": 1195,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 203,
+          "prompt_id": "387350f4ede9b8e36bed24abd70469cf57f4e5a76f5e9a2db1d3e2c5ce2ed648",
+          "source_index": 1658,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 204,
+          "prompt_id": "1b5084650de9ed04c00bf6cb7e16890cbf4101ebd02b01477e5a75372b5d491a",
+          "source_index": 192,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 205,
+          "prompt_id": "b5d51052b2c74902cff8d30f76e7a0b50da89a4b437091585fa408a23b4ea148",
+          "source_index": 1763,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 206,
+          "prompt_id": "3c1d238c2778310d9c34b36e0e8760a9c573de5e9d290b9fc3a79f4f07b6b2fb",
+          "source_index": 313,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 207,
+          "prompt_id": "9290a5f5a92c99e3c53f6adb6dcff016e3c0bb5bdc190a667323b03b74bee7b6",
+          "source_index": 988,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 208,
+          "prompt_id": "8eafb9c047c7301401f547a50152b7a535596deecca22831dbc1326e9e78c0fa",
+          "source_index": 1944,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 209,
+          "prompt_id": "fa62f47dce7fdd418f1fe400046cfad33992e25b0dc539b2215ad0fde27d5e95",
+          "source_index": 1962,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 210,
+          "prompt_id": "ac49c5f84641576e60ceeb016d42b4727ab5c5d068bc5ace8e0d7d47ccdb8018",
+          "source_index": 632,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 211,
+          "prompt_id": "d8c42cd55e2e363831d1a6860e5291b1cfdd4ccfd41df81112613316a023bdea",
+          "source_index": 1882,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 212,
+          "prompt_id": "311ec11e05eb8c78e9418fd441b71a8233219a12abb0929871613fa30f28ba51",
+          "source_index": 135,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 213,
+          "prompt_id": "002b6d5ce272521cecf2efce0b227f5f4ad0c59d62f2b20268dfe4ed822c5b38",
+          "source_index": 1864,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 214,
+          "prompt_id": "783b81ac45016a986b3a45812776415794bc38172e339fc652f704220e560a53",
+          "source_index": 1097,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 215,
+          "prompt_id": "ccde7fb9c2bc20c6c5223ca8ad0171b9b68f6e66d7e020848f972cdf643908a2",
+          "source_index": 971,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 216,
+          "prompt_id": "978753804773c2523a92793d8ba2fec02af70a0a2c9fbc748290fb9b350ab7b9",
+          "source_index": 1538,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 217,
+          "prompt_id": "ca28e720fca626d1b6be9e4b5cb77125c96645d0ff5e8409758dd786d2554db6",
+          "source_index": 349,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 218,
+          "prompt_id": "651e4c1d0b8bf0212c220f3f0a7d08161ad0952d9e3ea9d0963ab97a45937ea6",
+          "source_index": 457,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 219,
+          "prompt_id": "ce00414984df46d8c14759b04dc3a6380393aeaae722696bc538e5abdacc8600",
+          "source_index": 250,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 220,
+          "prompt_id": "2b4a671ad90b727df31d7a5b5150c803879aed3e57b3d3985c7448a76895bde0",
+          "source_index": 1611,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 221,
+          "prompt_id": "b851ec8e8dbed26c2754462b43f4df84d6e9968c4114523583bc421be075f23f",
+          "source_index": 1368,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 222,
+          "prompt_id": "0e349cac6f5bfe9fb2ffc7bd6f2e23bbff0e7bd5479c33ea5ed3bcdca410da23",
+          "source_index": 613,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 223,
+          "prompt_id": "da052619707dd50fb2450e160619ef8d404c4f2b7ebc30d0acc58b28cee565e7",
+          "source_index": 1439,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 224,
+          "prompt_id": "23de9ff23b5fd3621cc2501df17109eea7cc480a72fadee41e94359bb90873cb",
+          "source_index": 919,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 225,
+          "prompt_id": "6f80b3355205055db617131aeb458438018a7359e70938edc4a8b4a2dd7cfaf4",
+          "source_index": 1789,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 226,
+          "prompt_id": "14be3c00ff5dda61b51f810f42f0b4862f023f795b33e34082a8522c3fa6aea8",
+          "source_index": 203,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 227,
+          "prompt_id": "23bd8f99e8359f0052e16c65689eae80cb20bf937ea6ca5794d36d29734a560b",
+          "source_index": 961,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 228,
+          "prompt_id": "a6139d630b86c13ff02f8560d02bb96173f50645ae9f257a58ab5031ac4268fa",
+          "source_index": 575,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 229,
+          "prompt_id": "339a63d4f85c12bc9e4e816dd2e956a6ab54c4a766ff704160961cd741df8f80",
+          "source_index": 318,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 230,
+          "prompt_id": "5a4a1f2086d838899e72a3b07d3818059533930bb2d4f0a0c70930e1619a0cd1",
+          "source_index": 276,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 231,
+          "prompt_id": "d7d0a82a819c12d3ea8e4856f3591ede81f2403aa2ecce7664dad5edda8393c1",
+          "source_index": 1992,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 232,
+          "prompt_id": "1f841951b520457c296905f69361a50efda1921a5888f7b06a21042740640669",
+          "source_index": 1777,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 233,
+          "prompt_id": "77164eac11fd52ebdbe9803bcfce144e56dbd05de2142209353d2c0971e6b69d",
+          "source_index": 1294,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 234,
+          "prompt_id": "c2a2c247e9d2ecdb42d46d6e5215793f47d226912ef5586da4a354666da84cda",
+          "source_index": 1578,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 235,
+          "prompt_id": "2fb8c509d3d4967fe590949469b2530d695fadf2e58a378e642813250c73d922",
+          "source_index": 688,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 236,
+          "prompt_id": "dff3edaf537abc66dba9a9294d213811b7df139fe929426af41561a82467a819",
+          "source_index": 559,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 237,
+          "prompt_id": "9c5554433c25d0d360bece8bc3bb9223fc87380efc49b7e95cbda1ed6428d0f1",
+          "source_index": 1956,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 238,
+          "prompt_id": "6fb2a555b30906f5c24fedafc777fbd87735c67e59c1891bfb6774c22b6db3ac",
+          "source_index": 1505,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 239,
+          "prompt_id": "74ac9e28c971a5e85f53fb92796f6ecbc7c0b53fa66f0f386f5a580a2223a8d1",
+          "source_index": 1284,
+          "source_split": "test_prefs",
+          "length_stratum": "rejected_longer"
+        },
+        {
+          "data_index": 240,
+          "prompt_id": "f24019dead8dcad26499dd98b2e9df71fc1c9a887c5d780aa5b22c99001cb056",
+          "source_index": 1158,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 241,
+          "prompt_id": "7810f12c93f2f611c96cf1383da0503d963dcf9bbb5e01ff21ecf874f626fa0c",
+          "source_index": 520,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        },
+        {
+          "data_index": 242,
+          "prompt_id": "c5696ed10d3fc01103a9f2aa79a96d6e42384a5739f93a2edb5167e9331c2a5e",
+          "source_index": 1874,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 243,
+          "prompt_id": "a3848a146ee2ee7b7ae25abcfe7716e581cf98ef22d286b2011264d20c249bc8",
+          "source_index": 1458,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 244,
+          "prompt_id": "1127ee833c972f00c1a9d1b005b725c4d99b0c67de5945c03f1f724a7db43780",
+          "source_index": 912,
+          "source_split": "test_prefs",
+          "length_stratum": "preferred_longer"
+        },
+        {
+          "data_index": 245,
+          "prompt_id": "4afa06bee77d6dd68f1c675da27631fcddec1cda10f0911bd67cf5946bf79419",
+          "source_index": 868,
+          "source_split": "test_prefs",
+          "length_stratum": "length_matched"
+        }
+      ]
+    },
+    "word_limit_prompts": {
+      "path": "/content/atml-pa2/data/word_limit_prompts.jsonl",
+      "sha256": "4252fb01e078eaa835f9d4b3d6abaaba8033fe68e30dfa2d17c4d6886dd2ea49",
+      "num_examples": 10,
+      "selection": [
+        {
+          "data_index": 0,
+          "prompt_id": "wl01"
+        },
+        {
+          "data_index": 1,
+          "prompt_id": "wl02"
+        },
+        {
+          "data_index": 2,
+          "prompt_id": "wl03"
+        },
+        {
+          "data_index": 3,
+          "prompt_id": "wl04"
+        },
+        {
+          "data_index": 4,
+          "prompt_id": "wl05"
+        },
+        {
+          "data_index": 5,
+          "prompt_id": "wl06"
+        },
+        {
+          "data_index": 6,
+          "prompt_id": "wl07"
+        },
+        {
+          "data_index": 7,
+          "prompt_id": "wl08"
+        },
+        {
+          "data_index": 8,
+          "prompt_id": "wl09"
+        },
+        {
+          "data_index": 9,
+          "prompt_id": "wl10"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "batch_size": 2,
+    "max_generation_tokens": 256,
+    "max_sequence_length": 768,
+    "reward_max_length": 1024,
+    "reward_truncation": "left; retain generated response and most recent context",
+    "preference_accuracy": "mean(((pc-rc)-(pr-rr)) > 0); ties incorrect",
+    "sequence_logp": "sum over response tokens, including EOS; prompt/padding masked",
+    "overflow_preference_prompt": "if prompt >= context cap, retain common suffix of cap//2 tokens",
+    "generation_prompt_truncation": "left; retain up to max_sequence_length tokens",
+    "kl": "common.metrics.sampled_kl; global valid-response-token mean",
+    "response_length": "generated tokens after prompt through first EOS inclusive; padding excluded",
+    "length_std": "population (ddof=0)",
+    "word_limit": "common.metrics.word_limit_compliance (word_count <= parsed limit)",
+    "generation_prompts": "all standard held-out pairs in file order; separate common word-limit set"
+  },
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "beta": 0.1,
+    "betas": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "learning_rate": 2e-05,
+    "weight_decay": 0.0,
+    "batch_size": 2,
+    "grad_accum_steps": 8,
+    "epochs": 1,
+    "short_ablation_examples": 600,
+    "max_sequence_length": 768,
+    "max_generation_tokens": 256,
+    "max_grad_norm": 1.0,
+    "standard_output": "outputs/task1_dpo/standard",
+    "length_output": "outputs/task1_dpo/length_balanced",
+    "results_dir": "results/task1_dpo"
+  },
+  "versions": {
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.1",
+    "peft": "0.17.1",
+    "tokenizers": "0.22.1",
+    "accelerate": "1.15.0",
+    "numpy": "2.1.3"
+  },
+  "code_sha256": {
+    "task1_dpo/dpo.py": "81e83ff374df78becbd4c4e298936fcef70e5ba8e90ece2916697c153ecdd992",
+    "task1_dpo/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "task1_dpo/analyze_length.py": "a5191733bf200e29f76654ae116dbfb0af419cded5ebfd4fbd807e4e207bebac",
+    "task1_dpo/runtime.py": "595cd578a6a4024b53f98028f1680f4a7c948b0c5ca0d58015487e5162aeb1f3",
+    "task1_dpo/ablate_beta.py": "55f0007741deb56cb98decd8a3ff86c67dab7997e5759e5d838b9af819e990aa",
+    "task1_dpo/train.py": "649566a6e4df5df26749c606a1e9496d86550052588e4d6034620b27a464b224",
+    "task1_dpo/evaluate.py": "42944ec7bed7df229b67823ee6af2ba4495e69c66162eefff5a0fdd268102b05",
+    "common/logging_utils.py": "b521a4fa4e73aa7144dd807d8c2d8f6a129efe483f618f2c5f081d1ab52761ee",
+    "common/metrics.py": "29fe2bd56bc68dcaf55b7e291ffdeff2b61260cf0ead227be259f48531203fc1",
+    "common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "common/models.py": "01697ef3759ee7ac3b95f2b5b003b2cc6c0f6e81db3887d900547e77fa065c23",
+    "common/data.py": "76b594f89da5bc32726d0889e7e262faac8acfa83c5e3d0321ef8a212a446fec",
+    "common/generation.py": "ad7ed6ac961adc1ab754e067e0613b8ba924ac528274e2e7b33120ebc6b9040c"
+  },
+  "device": "cuda",
+  "cuda_device": "NVIDIA A100-SXM4-40GB",
+  "status": "complete"
+}

@@ -1,0 +1,99 @@
+{
+  "experiment": "beta_030",
+  "seed": 6304,
+  "beta": 0.3,
+  "training_budget": {
+    "epochs": 1,
+    "examples_per_epoch": 600,
+    "total_examples": 600,
+    "microbatches_per_epoch": 300,
+    "optimizer_steps": 38,
+    "batch_size": 2,
+    "grad_accum_steps": 8,
+    "effective_batch_size": 16,
+    "short_run": true
+  },
+  "held_out": {
+    "num_pairs": 300,
+    "dpo_loss": 0.6775460200508435,
+    "preference_margin": 0.12591016004482905,
+    "preference_accuracy": 0.61
+  },
+  "generation": {
+    "num_prompts": 300,
+    "kl_from_reference": 2.3086621037657914e-06,
+    "kl_log_ratio_sum": 0.10702957513058209,
+    "kl_response_tokens": 46360,
+    "reward_model_score": 1.24716251373291,
+    "response_length_tokens": {
+      "mean": 154.53333333333333,
+      "std": 103.71664390165265,
+      "median": 182.5,
+      "min": 2,
+      "max": 256
+    },
+    "word_count": {
+      "mean": 110.89333333333333,
+      "std": 76.72097902283457,
+      "median": 130.5,
+      "min": 1,
+      "max": 229
+    },
+    "word_limit_compliance": 0.0,
+    "num_word_limit_prompts": 1,
+    "truncation_rate": 0.43
+  },
+  "length_stratified": {
+    "overall": {
+      "num_pairs": 246,
+      "dpo_loss": 0.6817742942309961,
+      "preference_margin": 0.09169767494124126,
+      "preference_accuracy": 0.573170731707317
+    },
+    "strata": {
+      "preferred_longer": {
+        "num_pairs": 82,
+        "dpo_loss": 0.7037913443111792,
+        "preference_margin": -0.05492854699855897,
+        "preference_accuracy": 0.45121951219512196
+      },
+      "length_matched": {
+        "num_pairs": 82,
+        "dpo_loss": 0.6850068903550869,
+        "preference_margin": 0.06351877421867556,
+        "preference_accuracy": 0.5365853658536586
+      },
+      "rejected_longer": {
+        "num_pairs": 82,
+        "dpo_loss": 0.6565246480267223,
+        "preference_margin": 0.2665027976036072,
+        "preference_accuracy": 0.7317073170731707
+      }
+    }
+  },
+  "common_word_limit": {
+    "num_prompts": 10,
+    "kl_from_reference": 0.000573430266977875,
+    "kl_log_ratio_sum": 0.2637779228098225,
+    "kl_response_tokens": 460,
+    "reward_model_score": 3.316796875,
+    "response_length_tokens": {
+      "mean": 46.0,
+      "std": 18.9103146457165,
+      "median": 39.0,
+      "min": 23,
+      "max": 86
+    },
+    "word_count": {
+      "mean": 39.7,
+      "std": 16.685622553563892,
+      "median": 33.5,
+      "min": 20,
+      "max": 75
+    },
+    "word_limit_compliance": 0.5,
+    "num_word_limit_prompts": 10,
+    "truncation_rate": 0.0
+  },
+  "elapsed_seconds": 1720.9436704430009
+}
