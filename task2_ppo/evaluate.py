@@ -26,6 +26,7 @@ def load_evaluation_bundle(config_path: str, adapter: str):
 
 
 def evaluate(config_path: str, adapter: str, name: str = "standard"):
+    print(f"[eval] Starting held-out evaluation | run={name} | checkpoint={adapter}", flush=True)
     cfg = load_yaml(config_path)
     result_dir = repo_path(cfg["results_dir"]) / name
     if any((result_dir / f).exists() for f in ("metrics.json", "generations.jsonl")):
@@ -75,6 +76,8 @@ def evaluate(config_path: str, adapter: str, name: str = "standard"):
         }
         append_jsonl(result_dir / "generations.jsonl", record)
         records.append(record)
+        if index == 0 or (index + 1) % 5 == 0 or index + 1 == len(bundle["rows"]):
+            print(f"[eval] {name} | examples={index + 1}/{len(bundle['rows'])}", flush=True)
     if not records:
         raise ValueError("The fixed held-out prompt pool is empty")
     lengths = torch.tensor([r["response_length"] for r in records], dtype=torch.float64)
@@ -92,6 +95,7 @@ def evaluate(config_path: str, adapter: str, name: str = "standard"):
         "manifest": str(result_dir / "evaluation_manifest.json"),
     }
     save_json(result_dir / "metrics.json", metrics)
+    print(f"[eval] Complete | run={name} | saved results: {result_dir}", flush=True)
     return metrics
 
 

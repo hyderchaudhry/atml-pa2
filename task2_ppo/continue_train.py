@@ -34,18 +34,24 @@ def prepare_ppo_continuation(config_path: str):
     cfg = load_yaml(config_path)
     set_seed(int(cfg["seed"]))
 
+    print(f"Loading tokenizer: {cfg['base_model']}", flush=True)
     tokenizer = load_tokenizer(cfg["base_model"])
+    print(f"Loading policy checkpoint: {cfg['paths']['ppo_midpoint_policy']}", flush=True)
     policy = load_policy(
         cfg,
         adapter_path=cfg["paths"]["ppo_midpoint_policy"],
         trainable=True,
     )
+    print("Reference policy: base policy with adapter disabled", flush=True)
+    print(f"Loading value checkpoint: {cfg['paths']['ppo_midpoint_value']}", flush=True)
     value_model = load_value_model(
         cfg,
         cfg["paths"]["ppo_midpoint_value"],
         train_mode=cfg.get("value_train_mode", "head_only"),
     )
+    print(f"Loading reward model: {cfg['reward_model']}", flush=True)
     reward_model, reward_tokenizer = load_reward_model(cfg)
+    print(f"Loading prompts: {cfg['paths']['rl_prompt_train']}", flush=True)
     prompts = read_jsonl(cfg["paths"]["rl_prompt_train"])
 
     # PEFT promotes LoRA weights, but the saved critic head can remain FP16.
@@ -81,6 +87,7 @@ def prepare_ppo_continuation(config_path: str):
 
 
 def run_ppo(config_path: str, output: str | None = None, updates: int | None = None, clip_epsilon: float | None = None, kl_beta: float | None = None, run_name: str = "standard"):
+    print(f"PPO run {run_name} | loading config: {config_path}", flush=True)
     cfg = load_yaml(config_path)
     if updates is not None:
         cfg["updates"] = int(updates)
@@ -96,6 +103,11 @@ def run_ppo(config_path: str, output: str | None = None, updates: int | None = N
         raise FileExistsError(f"Refusing to overwrite PPO run: {out} or {result_dir}")
     if min(int(cfg[k]) for k in ("updates", "prompts_per_update", "ppo_epochs")) < 1:
         raise ValueError("PPO budgets must be positive")
+    print(
+        f"Run {run_name} | updates={cfg['updates']} | "
+        f"clip_epsilon={cfg['clip_epsilon']} | KL_beta={cfg['kl_beta']}",
+        flush=True,
+    )
     bundle = prepare_ppo_continuation(config_path)
     bundle["cfg"] = cfg
     rows = bundle["prompt_rows"]
@@ -124,6 +136,7 @@ def run_ppo(config_path: str, output: str | None = None, updates: int | None = N
     cuda = device.type == "cuda"
     scaler = torch.amp.GradScaler("cuda", enabled=cuda and cfg["dtype"] in {"float16", "fp16"})
     set_seed(int(cfg["seed"]))
+    print(f"Run {run_name} | device={device} | beginning PPO continuation", flush=True)
     if cuda:
         torch.cuda.synchronize(device)
         torch.cuda.reset_peak_memory_stats(device)
@@ -198,6 +211,14 @@ def run_ppo(config_path: str, output: str | None = None, updates: int | None = N
         }
         append_jsonl(result_dir / "trajectory.jsonl", record)
         trajectory.append(record)
+        print(
+            f"Update {update}/{cfg['updates']} | reward={record['learned_reward']:.4f} | "
+            f"KL={record['kl']:.4f} | policy_loss={record['policy_loss']:.4f} | "
+            f"value_loss={record['value_loss']:.4f} | clip_frac={record['clip_fraction']:.4f} | "
+            f"entropy={record['entropy']:.4f} | len={record['response_length']:.1f} | "
+            f"elapsed={elapsed():.1f}s",
+            flush=True,
+        )
     if cuda:
         torch.cuda.synchronize(device)
     runtime = elapsed()

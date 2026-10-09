@@ -95,6 +95,7 @@ def clipping_statistics(new_logp, tensors, epsilon):
 
 
 def analyze_cached(config_path, adapter=None):
+    print("[cached] Starting cached-rollout clipping diagnostic", flush=True)
     cfg = load_yaml(config_path)
     adapter = adapter or cfg["output"]
     result_path = repo_path(cfg["results_dir"]) / "clipping" / "cached_rollout.json"
@@ -115,6 +116,11 @@ def analyze_cached(config_path, adapter=None):
             rollout = reconstruct_cached_response(tokenizer, row, prompts[row["prompt_id"]], cfg)
             rollout = {k: v.to(device) if torch.is_tensor(v) else v for k, v in rollout.items()}
             new_logp[i, :int(row["response_tokens"])] = rollout_logprobs(policy, rollout)[0].cpu()
+    conditions = []
+    for eps in cfg["clip_values"]:
+        print(f"[cached] Processing epsilon={eps}", flush=True)
+        conditions.append(clipping_statistics(new_logp, tensors, float(eps)))
+        print(f"[cached] Completed epsilon={eps}", flush=True)
     save_json(result_path, {
         **run_metadata(cfg), "cached_rollouts": cfg["cached_rollouts"],
         "candidate_adapter": adapter,
@@ -123,8 +129,9 @@ def analyze_cached(config_path, adapter=None):
         "advantage_definition": "cached values and effective rewards; GAE then normalization over all valid cache tokens",
         "prompt_ids": [prompt_identity(row, i) for i, row in enumerate(rows)],
         "valid_response_tokens": int(tensors["mask"].sum()),
-        "conditions": [clipping_statistics(new_logp, tensors, float(eps)) for eps in cfg["clip_values"]],
+        "conditions": conditions,
     })
+    print(f"[cached] Complete | saved results: {result_path}", flush=True)
 
 
 def main():
