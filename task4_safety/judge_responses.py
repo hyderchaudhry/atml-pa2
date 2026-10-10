@@ -8,8 +8,10 @@ from pathlib import Path
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
-from common.data import load_yaml, read_jsonl
+from common.data import load_yaml, read_jsonl, repo_path
+from common.logging_utils import append_jsonl, save_json, set_seed
 from common.models import resolve_dtype
+from task4_safety.generate_responses import policy_specs, validate_responses
 
 LABELS = {
     "SAFE_ANSWER",
@@ -102,20 +104,50 @@ def judge_one(tok, model, prompt, response, max_new_tokens=64):
     return parse_json(generated)
 
 
+def judge_responses(config_path: str, input_path: str | None = None):
+    cfg = load_yaml(config_path)
+    outdir = repo_path(cfg["results_dir"]) / "task4_safety"
+    sources = [repo_path(input_path)] if input_path else [
+        outdir / f"generated_{name}.jsonl" for name in policy_specs(cfg)
+    ]
+    inputs = []
+    for path in sources:
+        rows = read_jsonl(path)
+        if not rows or rows[0]["policy"] not in policy_specs(cfg):
+            raise ValueError(f"Expected generated responses from a fixed Task 4 policy: {path}")
+        name = rows[0]["policy"]
+        validate_responses(cfg, rows, name)
+        destination = outdir / f"judged_{name}.jsonl"
+        if destination.exists():
+            raise FileExistsError(f"Refusing to overwrite cached judge labels: {destination}")
+        inputs.append((path, name, rows, destination))
+    set_seed(int(cfg["seed"]))
+    print(f"Loading fixed Task 4 judge: {cfg['ai_judge_model']}", flush=True)
+    tok, model = load_judge(cfg)
+    for path, name, rows, destination in inputs:
+        save_json(outdir / f"judge_manifest_{name}.json", {
+            "config": cfg, "input": str(path), "output": str(destination),
+            "model": cfg["ai_judge_model"], "seed": int(cfg["seed"]),
+            "prompt_template": JUDGE_PROMPT, "labels": sorted(LABELS),
+            "decoding": {"do_sample": False, "max_new_tokens": int(cfg["judge_max_new_tokens"])},
+            "confidence_use": "audit only; never used as a scalar score or metric weight",
+            "xstest_ids": [row["xstest_id"] for row in rows],
+        })
+        for index, row in enumerate(rows, 1):
+            print(f"Judging {name}: {index}/{len(rows)} (XSTest ID {row['xstest_id']})", flush=True)
+            judgment = judge_one(tok, model, row["prompt"], row["response"],
+                                 max_new_tokens=int(cfg["judge_max_new_tokens"]))
+            append_jsonl(destination, {**row, **judgment})
+        print(f"Saved {name} judge labels: {destination}", flush=True)
+    return outdir
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/feedback.yaml")
     ap.add_argument("--input", help="Optional generated JSONL file to inspect")
     args = ap.parse_args()
-    cfg = load_yaml(args.config)
-    tok, model = load_judge(cfg)
-    print("Fixed Task 4 judge loaded:", cfg["ai_judge_model"])
-    if args.input:
-        rows = read_jsonl(args.input)
-        print("Input rows:", len(rows))
-    raise NotImplementedError(
-        "TODO(student): apply judge_one to your frozen-policy response files, cache the labels, and implement the required Task 4 aggregation."
-    )
+    judge_responses(args.config, args.input)
 
 
 if __name__ == "__main__":
