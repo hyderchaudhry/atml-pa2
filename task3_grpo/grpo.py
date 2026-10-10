@@ -2,19 +2,28 @@ from __future__ import annotations
 
 import torch
 
-from common.metrics import masked_mean, sampled_kl, sample_entropy
+from common.metrics import masked_mean, sample_entropy
 
 
-def group_relative_advantages(rewards: torch.Tensor, group_ids: torch.Tensor, eps: float = 1e-6):
+ADVANTAGE_EPS = 1e-6
+
+
+def group_relative_advantages(rewards: torch.Tensor, group_ids: torch.Tensor, eps: float = ADVANTAGE_EPS):
     """Return one scalar advantage per sampled completion.
 
     `group_ids[i]` identifies which prompt produced reward `rewards[i]`.
-    Validate this implementation against the group-relative definition in the assignment manual.
+    Use population standard deviation and the manual's additive epsilon.
     """
-    # Starter implementation: students must validate the grouping logic carefully.
-    mean = rewards.mean()
-    std = rewards.std(unbiased=False).clamp_min(eps)
-    return (rewards - mean) / std
+    if rewards.ndim != 1 or rewards.shape != group_ids.shape or eps <= 0:
+        raise ValueError("Expected aligned reward/group vectors and positive epsilon")
+    rewards = rewards.float()
+    group_ids = group_ids.to(rewards.device)
+    advantages = torch.zeros_like(rewards)
+    for group_id in torch.unique(group_ids):
+        members = group_ids == group_id
+        group = rewards[members]
+        advantages[members] = (group - group.mean()) / (group.std(unbiased=False) + eps)
+    return advantages
 
 
 def grpo_policy_loss(
@@ -45,8 +54,8 @@ def grpo_policy_loss(
         per_sequence = token_sum / denom
         policy_term = -per_sequence.mean()
     elif loss_type == "dr_grpo":
-        if max_completion_length is None:
-            raise ValueError("dr_grpo requires max_completion_length")
+        if max_completion_length is None or max_completion_length <= 0:
+            raise ValueError("dr_grpo requires positive max_completion_length")
         # Constant normalization rather than dividing by each response's realized length.
         per_sequence = token_sum / float(max_completion_length)
         policy_term = -per_sequence.mean()
@@ -69,5 +78,25 @@ def grpo_policy_loss(
 
 def mask_truncated_sequences(token_mask: torch.Tensor, truncated: list[bool] | torch.Tensor):
     truncated = torch.as_tensor(truncated, device=token_mask.device, dtype=torch.bool)
+    if truncated.shape != (token_mask.shape[0],):
+        raise ValueError("Expected one truncation flag per completion")
     keep = (~truncated).to(token_mask.dtype)[:, None]
     return token_mask * keep
+
+
+def normalization_statistics(new_logp, old_logp, advantages, mask, eps, loss_type, cap):
+    """Exact policy-surrogate derivative w.r.t. sampled-token log probabilities.
+
+    This measures normalization's gradient allocation, not a parameter-gradient norm.
+    It excludes the unchanged KL term and includes the completion-batch averaging.
+    """
+    logp = new_logp.detach().requires_grad_(True)
+    loss, _ = grpo_policy_loss(logp, old_logp.detach(), advantages.detach(), mask,
+                               logp.detach(), eps, 0.0, loss_type, cap)
+    gradient, = torch.autograd.grad(loss, logp)
+    lengths = mask.sum(-1)
+    return {
+        "surrogate_logp_gradient_l1": gradient.abs().sum(-1).tolist(),
+        "surrogate_logp_gradient_l2": gradient.square().sum(-1).sqrt().tolist(),
+        "mean_absolute_token_gradient": (gradient.abs().sum(-1) / lengths.clamp_min(1)).tolist(),
+    }
