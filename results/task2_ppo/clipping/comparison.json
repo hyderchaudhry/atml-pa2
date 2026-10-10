@@ -1,0 +1,90 @@
+{
+  "parameter": "--clip-epsilon",
+  "conditions": [
+    {
+      "condition": 0.05,
+      "run_name": "clipping_0.05",
+      "fork_updates": 8,
+      "epsilon": 0.05,
+      "beta_kl": 0.1,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 59909,
+        "learned_reward": 1.4567821502685547,
+        "kl": -3.705070506188104e-05,
+        "entropy": 0.8249588384676826,
+        "response_length": 299.545,
+        "response_length_std": 256.23330770022847,
+        "eos_rate": 0.905,
+        "truncation_rate": 0.095,
+        "epsilon": 0.05,
+        "beta_kl": 0.1,
+        "manifest": "/content/atml-pa2/results/task2_ppo/clipping_0.05/evaluation_manifest.json"
+      },
+      "mean_gradient_norm": 0.5069613512605429,
+      "max_gradient_norm": 2.0259130001068115,
+      "skipped_policy_steps": 0,
+      "skipped_value_steps": 6,
+      "training_manifest": "/content/atml-pa2/results/task2_ppo/clipping_0.05/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task2_ppo/clipping_0.05/trajectory.jsonl",
+      "examples": "/content/atml-pa2/results/task2_ppo/clipping_0.05/generations.jsonl"
+    },
+    {
+      "condition": 0.2,
+      "run_name": "clipping_0.20",
+      "fork_updates": 8,
+      "epsilon": 0.2,
+      "beta_kl": 0.1,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 57519,
+        "learned_reward": 1.5162413787841797,
+        "kl": 3.483487296588688e-07,
+        "entropy": 0.8478153306430245,
+        "response_length": 287.595,
+        "response_length_std": 245.00477745342025,
+        "eos_rate": 0.925,
+        "truncation_rate": 0.075,
+        "epsilon": 0.2,
+        "beta_kl": 0.1,
+        "manifest": "/content/atml-pa2/results/task2_ppo/clipping_0.20/evaluation_manifest.json"
+      },
+      "mean_gradient_norm": 0.5891970610246062,
+      "max_gradient_norm": 1.9525970220565796,
+      "skipped_policy_steps": 0,
+      "skipped_value_steps": 7,
+      "training_manifest": "/content/atml-pa2/results/task2_ppo/clipping_0.20/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task2_ppo/clipping_0.20/trajectory.jsonl",
+      "examples": "/content/atml-pa2/results/task2_ppo/clipping_0.20/generations.jsonl"
+    },
+    {
+      "condition": 0.5,
+      "run_name": "clipping_0.50",
+      "fork_updates": 8,
+      "epsilon": 0.5,
+      "beta_kl": 0.1,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 60096,
+        "learned_reward": 1.4475194931030273,
+        "kl": -3.043041812277312e-05,
+        "entropy": 0.8323601289113821,
+        "response_length": 300.48,
+        "response_length_std": 258.3994767796561,
+        "eos_rate": 0.9,
+        "truncation_rate": 0.1,
+        "epsilon": 0.5,
+        "beta_kl": 0.1,
+        "manifest": "/content/atml-pa2/results/task2_ppo/clipping_0.50/evaluation_manifest.json"
+      },
+      "mean_gradient_norm": 0.5095924660563469,
+      "max_gradient_norm": 2.0404510498046875,
+      "skipped_policy_steps": 0,
+      "skipped_value_steps": 6,
+      "training_manifest": "/content/atml-pa2/results/task2_ppo/clipping_0.50/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task2_ppo/clipping_0.50/trajectory.jsonl",
+      "examples": "/content/atml-pa2/results/task2_ppo/clipping_0.50/generations.jsonl"
+    }
+  ],
+  "stability_statistic": "policy L2 gradient norm before clipping, over all optimization epochs"
+}

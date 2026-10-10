@@ -1,0 +1,167 @@
+{
+  "seed": 6304,
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 8,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "ppo_epochs": 2,
+    "policy_learning_rate": 3e-06,
+    "value_lora_learning_rate": 0.0001,
+    "value_head_learning_rate": 0.0003,
+    "value_train_mode": "lora_head",
+    "clip_epsilon": 0.2,
+    "clip_values": [
+      0.05,
+      0.2,
+      0.5
+    ],
+    "kl_beta": 0.1,
+    "kl_values": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "value_coef": 0.5,
+    "missing_eos_penalty": 1.0,
+    "max_prompt_length": 256,
+    "max_response_length": 512,
+    "eval_max_response_length": 768,
+    "reward_max_length": 1280,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task2_ppo/standard",
+    "results_dir": "results/task2_ppo",
+    "cached_rollouts": "cached/ppo_rollout.pt"
+  },
+  "policy_checkpoint": "checkpoints/ppo_midpoint_policy",
+  "value_checkpoint": "checkpoints/ppo_midpoint_value",
+  "reference": {
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "disabled"
+  },
+  "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+  "updates": 8,
+  "epsilon": 0.2,
+  "beta_kl": 0.1,
+  "metric_conventions": {
+    "kl": "common.metrics.sampled_kl: valid-token mean of policy minus reference log-probability",
+    "entropy": "common.metrics.sample_entropy: valid-token mean negative sampled log-probability",
+    "logprobs": "unwarped model log-probabilities, as in common.generation.response_token_logprobs",
+    "response_length": "generated tokens including terminal EOS, excluding padding; population std"
+  },
+  "run_name": "kl_0.10",
+  "output": "/content/atml-pa2/outputs/task2_ppo/kl_0.10",
+  "wall_clock_seconds": 109.52264897900022,
+  "peak_allocated_bytes": 8314845184,
+  "peak_reserved_bytes": 8709472256,
+  "memory_device": "cuda:0",
+  "completed_updates": 8,
+  "generated_tokens": 2465,
+  "mean_gradient_norm": 0.5088571310043335,
+  "max_gradient_norm": 2.0336005687713623,
+  "skipped_policy_steps": 0,
+  "skipped_value_steps": 6,
+  "last_update": {
+    "update": 8,
+    "learned_reward": 1.255859375,
+    "effective_terminal_reward": 1.255859375,
+    "kl": -0.000480759801575914,
+    "entropy": 0.5951784253120422,
+    "response_length": 304.0,
+    "response_length_std": 0.0,
+    "response_lengths": [
+      304
+    ],
+    "generated_tokens": 304,
+    "prompt_ids": [
+      {
+        "row_index": 7,
+        "prompt_id": "317132817254b4f8e35bbffa6faba1b8e1abbad8b3295186e73167375ec4176f",
+        "source_index": 29307,
+        "source_split": "train_gen"
+      }
+    ],
+    "epochs": [
+      {
+        "epoch": 1,
+        "policy_loss": -9.411259327407606e-09,
+        "value_loss": 6.597148895263672,
+        "clip_fraction": 0.0,
+        "gradient_norm": 0.21983292698860168,
+        "value_gradient_norm": 74.5044937133789,
+        "policy_step_skipped": false,
+        "value_step_skipped": false
+      },
+      {
+        "epoch": 2,
+        "policy_loss": 0.00023268711811397225,
+        "value_loss": 6.398035049438477,
+        "clip_fraction": 0.0,
+        "gradient_norm": 0.2207028567790985,
+        "value_gradient_norm": 72.68955993652344,
+        "policy_step_skipped": false,
+        "value_step_skipped": false
+      }
+    ],
+    "policy_loss": 0.00011633885342732242,
+    "value_loss": 6.497591972351074,
+    "clip_fraction": 0.0,
+    "gradient_norm": 0.2202678918838501,
+    "value_gradient_norm": 73.59702682495117,
+    "policy_step_skipped": 0.0,
+    "value_step_skipped": 0.0
+  }
+}

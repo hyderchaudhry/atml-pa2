@@ -1,0 +1,90 @@
+{
+  "parameter": "--kl-beta",
+  "conditions": [
+    {
+      "condition": 0.0,
+      "run_name": "kl_0.00",
+      "fork_updates": 8,
+      "epsilon": 0.2,
+      "beta_kl": 0.0,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 59309,
+        "learned_reward": 1.5484884548187257,
+        "kl": 1.1756206684322537e-05,
+        "entropy": 0.822362591899813,
+        "response_length": 296.545,
+        "response_length_std": 250.98306312378935,
+        "eos_rate": 0.92,
+        "truncation_rate": 0.08,
+        "epsilon": 0.2,
+        "beta_kl": 0.0,
+        "manifest": "/content/atml-pa2/results/task2_ppo/kl_0.00/evaluation_manifest.json"
+      },
+      "mean_gradient_norm": 0.5095789907500148,
+      "max_gradient_norm": 2.032925605773926,
+      "skipped_policy_steps": 0,
+      "skipped_value_steps": 6,
+      "training_manifest": "/content/atml-pa2/results/task2_ppo/kl_0.00/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task2_ppo/kl_0.00/trajectory.jsonl",
+      "examples": "/content/atml-pa2/results/task2_ppo/kl_0.00/generations.jsonl"
+    },
+    {
+      "condition": 0.1,
+      "run_name": "kl_0.10",
+      "fork_updates": 8,
+      "epsilon": 0.2,
+      "beta_kl": 0.1,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 59507,
+        "learned_reward": 1.4807242393493651,
+        "kl": -2.323786653679421e-05,
+        "entropy": 0.8204821103249199,
+        "response_length": 297.535,
+        "response_length_std": 254.67969839584782,
+        "eos_rate": 0.905,
+        "truncation_rate": 0.095,
+        "epsilon": 0.2,
+        "beta_kl": 0.1,
+        "manifest": "/content/atml-pa2/results/task2_ppo/kl_0.10/evaluation_manifest.json"
+      },
+      "mean_gradient_norm": 0.5088571310043335,
+      "max_gradient_norm": 2.0336005687713623,
+      "skipped_policy_steps": 0,
+      "skipped_value_steps": 6,
+      "training_manifest": "/content/atml-pa2/results/task2_ppo/kl_0.10/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task2_ppo/kl_0.10/trajectory.jsonl",
+      "examples": "/content/atml-pa2/results/task2_ppo/kl_0.10/generations.jsonl"
+    },
+    {
+      "condition": 0.2,
+      "run_name": "kl_0.20",
+      "fork_updates": 8,
+      "epsilon": 0.2,
+      "beta_kl": 0.2,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 59428,
+        "learned_reward": 1.4951932144165039,
+        "kl": -3.548446053374826e-05,
+        "entropy": 0.8465237150932474,
+        "response_length": 297.14,
+        "response_length_std": 249.61866997482372,
+        "eos_rate": 0.935,
+        "truncation_rate": 0.065,
+        "epsilon": 0.2,
+        "beta_kl": 0.2,
+        "manifest": "/content/atml-pa2/results/task2_ppo/kl_0.20/evaluation_manifest.json"
+      },
+      "mean_gradient_norm": 0.4854347947984934,
+      "max_gradient_norm": 2.03448224067688,
+      "skipped_policy_steps": 0,
+      "skipped_value_steps": 6,
+      "training_manifest": "/content/atml-pa2/results/task2_ppo/kl_0.20/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task2_ppo/kl_0.20/trajectory.jsonl",
+      "examples": "/content/atml-pa2/results/task2_ppo/kl_0.20/generations.jsonl"
+    }
+  ],
+  "stability_statistic": "policy L2 gradient norm before clipping, over all optimization epochs"
+}

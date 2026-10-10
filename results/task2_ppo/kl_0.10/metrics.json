@@ -1,0 +1,14 @@
+{
+  "num_prompts": 200,
+  "valid_response_tokens": 59507,
+  "learned_reward": 1.4807242393493651,
+  "kl": -2.323786653679421e-05,
+  "entropy": 0.8204821103249199,
+  "response_length": 297.535,
+  "response_length_std": 254.67969839584782,
+  "eos_rate": 0.905,
+  "truncation_rate": 0.095,
+  "epsilon": 0.2,
+  "beta_kl": 0.1,
+  "manifest": "/content/atml-pa2/results/task2_ppo/kl_0.10/evaluation_manifest.json"
+}

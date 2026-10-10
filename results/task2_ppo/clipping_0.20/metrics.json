@@ -1,0 +1,14 @@
+{
+  "num_prompts": 200,
+  "valid_response_tokens": 57519,
+  "learned_reward": 1.5162413787841797,
+  "kl": 3.483487296588688e-07,
+  "entropy": 0.8478153306430245,
+  "response_length": 287.595,
+  "response_length_std": 245.00477745342025,
+  "eos_rate": 0.925,
+  "truncation_rate": 0.075,
+  "epsilon": 0.2,
+  "beta_kl": 0.1,
+  "manifest": "/content/atml-pa2/results/task2_ppo/clipping_0.20/evaluation_manifest.json"
+}

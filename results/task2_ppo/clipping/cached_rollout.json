@@ -1,0 +1,302 @@
+{
+  "seed": 6304,
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 20,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "ppo_epochs": 2,
+    "policy_learning_rate": 3e-06,
+    "value_lora_learning_rate": 0.0001,
+    "value_head_learning_rate": 0.0003,
+    "value_train_mode": "lora_head",
+    "clip_epsilon": 0.2,
+    "clip_values": [
+      0.05,
+      0.2,
+      0.5
+    ],
+    "kl_beta": 0.1,
+    "kl_values": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "value_coef": 0.5,
+    "missing_eos_penalty": 1.0,
+    "max_prompt_length": 256,
+    "max_response_length": 512,
+    "eval_max_response_length": 768,
+    "reward_max_length": 1280,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task2_ppo/standard",
+    "results_dir": "results/task2_ppo",
+    "cached_rollouts": "cached/ppo_rollout.pt"
+  },
+  "policy_checkpoint": "checkpoints/ppo_midpoint_policy",
+  "value_checkpoint": "checkpoints/ppo_midpoint_value",
+  "reference": {
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "disabled"
+  },
+  "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+  "updates": 20,
+  "epsilon": 0.2,
+  "beta_kl": 0.1,
+  "metric_conventions": {
+    "kl": "common.metrics.sampled_kl: valid-token mean of policy minus reference log-probability",
+    "entropy": "common.metrics.sample_entropy: valid-token mean negative sampled log-probability",
+    "logprobs": "unwarped model log-probabilities, as in common.generation.response_token_logprobs",
+    "response_length": "generated tokens including terminal EOS, excluding padding; population std"
+  },
+  "cached_rollouts": "cached/ppo_rollout.pt",
+  "candidate_adapter": "outputs/task2_ppo/standard",
+  "ratio_definition": "candidate policy / cached behavior policy on the unchanged cached responses",
+  "affected_token_definition": "ratio outside [1-epsilon, 1+epsilon], same mask as clip_fraction",
+  "advantage_definition": "cached values and effective rewards; GAE then normalization over all valid cache tokens",
+  "prompt_ids": [
+    {
+      "row_index": 0,
+      "prompt_id": "d407599fef051a44d505c8439c3c6a6fb7d8fb6658384a4c391e9c2f2146f16d",
+      "source_index": 124
+    },
+    {
+      "row_index": 1,
+      "prompt_id": "01a4b2ed4479c8fa682c3466f7db16f277168d90c8450a729089f4527345ee8d",
+      "source_index": 671
+    },
+    {
+      "row_index": 2,
+      "prompt_id": "4f38c04a24c73c45df69326d4c7cd11dd422127645725ebba220231150bca382",
+      "source_index": 510
+    },
+    {
+      "row_index": 3,
+      "prompt_id": "b8b9d3c72997de501f1e5179b0e5e2b5dae4c865f92dbe51ac4224e2039ea58d",
+      "source_index": 981
+    },
+    {
+      "row_index": 4,
+      "prompt_id": "faff5c962224bd104f4c6eb8c00bcfd84c37b29d3de55e600ccc3cc3ea4c3f99",
+      "source_index": 175
+    },
+    {
+      "row_index": 5,
+      "prompt_id": "bdfcf969f2a84458b2498e0acc198d3094334b81d595fed1724210d7c9f89279",
+      "source_index": 185
+    },
+    {
+      "row_index": 6,
+      "prompt_id": "527fbcd702b2e3e8125b5516be289806fa79e2685c0e4285276d03acf3dcc043",
+      "source_index": 953
+    },
+    {
+      "row_index": 7,
+      "prompt_id": "c359f7ed5e4a168b1e27bd1c27dc9752980103a2e1b38991e5011a7ea44d214e",
+      "source_index": 873
+    },
+    {
+      "row_index": 8,
+      "prompt_id": "cb3bebe583bd8475019b58042be3a76432b23c81b79b32c441d4b3bf203760df",
+      "source_index": 796
+    },
+    {
+      "row_index": 9,
+      "prompt_id": "da4fae100599eb9dfb9500f28dd604665eaba000cd4b94940f3471c85c8de99d",
+      "source_index": 263
+    },
+    {
+      "row_index": 10,
+      "prompt_id": "d31b039922e3bb89d63a8f7331c90d77437a449e4b5f757a114b28002ffae60a",
+      "source_index": 507
+    },
+    {
+      "row_index": 11,
+      "prompt_id": "23bd8f99e8359f0052e16c65689eae80cb20bf937ea6ca5794d36d29734a560b",
+      "source_index": 961
+    },
+    {
+      "row_index": 12,
+      "prompt_id": "be78486affffe4f57015a153c5529c949aeb7511e1f30ed76da522452f245bed",
+      "source_index": 280
+    },
+    {
+      "row_index": 13,
+      "prompt_id": "d995e3ae06848698448f0310c0956505e70240e048f520449e325f00ed1479a0",
+      "source_index": 936
+    },
+    {
+      "row_index": 14,
+      "prompt_id": "5294c9606e5e6fb93dc94319d5547c1cba3d6d44da00ee551d2621227e3b6ee8",
+      "source_index": 254
+    },
+    {
+      "row_index": 15,
+      "prompt_id": "5df5fb2b07b896cb5c4419afc9d3fd2b653535528abe1819bd2b52c07d52726b",
+      "source_index": 463
+    },
+    {
+      "row_index": 16,
+      "prompt_id": "15837ad2725266a35255f91d2e023ea644ede5cb9d7ec9270ab3c6dd6449a74c",
+      "source_index": 436
+    },
+    {
+      "row_index": 17,
+      "prompt_id": "a2d24c910daf54855e433d30c3e03a33384b87f028e9306be71ecab95700964b",
+      "source_index": 942
+    },
+    {
+      "row_index": 18,
+      "prompt_id": "ba7ddaf72f0e034da39b43276b9f418894a12a6fffdbcf6359a302ef1b34688e",
+      "source_index": 184
+    },
+    {
+      "row_index": 19,
+      "prompt_id": "ad86afe9508e533cc19d35c42f785e900274a28e57d150e0007c7fb632a70889",
+      "source_index": 922
+    },
+    {
+      "row_index": 20,
+      "prompt_id": "de9a80e769756c36c3bec31ccca84a180e2862f7dd06ef5e5a36fde7caceaa2a",
+      "source_index": 755
+    },
+    {
+      "row_index": 21,
+      "prompt_id": "651e4c1d0b8bf0212c220f3f0a7d08161ad0952d9e3ea9d0963ab97a45937ea6",
+      "source_index": 457
+    },
+    {
+      "row_index": 22,
+      "prompt_id": "d618f38c0b2f73bb7985a1f07a7b4ca3b70e62a96407b8f6877da59e9241ba82",
+      "source_index": 832
+    },
+    {
+      "row_index": 23,
+      "prompt_id": "81b5deabb0959afb606520d2b821cd91dfd5c103f414ed5c2c132d18b0cc2f3a",
+      "source_index": 495
+    },
+    {
+      "row_index": 24,
+      "prompt_id": "bbb1f3edc97f55e9a504614eaf228ae71a726659d3fc5a7ede0a50272d82aa36",
+      "source_index": 803
+    },
+    {
+      "row_index": 25,
+      "prompt_id": "7537ba60fd0462809ced9a559fc5c3b59f444113a25370050f7023a4d7114525",
+      "source_index": 149
+    },
+    {
+      "row_index": 26,
+      "prompt_id": "549538cb4267fef6a57d9d5e7a26a5c7442e57aa33d9bc39d809035c8f9a4ae5",
+      "source_index": 569
+    },
+    {
+      "row_index": 27,
+      "prompt_id": "31783102351f5d1c9e94c643b70ed6846259c3f75c401df9340453115840bbda",
+      "source_index": 565
+    },
+    {
+      "row_index": 28,
+      "prompt_id": "361837e189aba374f1e02b095d702a0cc59a3ca4d0ebbfb3c9367e68a4ecff20",
+      "source_index": 236
+    },
+    {
+      "row_index": 29,
+      "prompt_id": "deea28c01e3cb09aceb216be5d2d1245384925634d73b6532a8e8ca2572946b5",
+      "source_index": 716
+    },
+    {
+      "row_index": 30,
+      "prompt_id": "43a65558477a52211d9d79bce07b93ec56c8775994fc6fc04c4dab392a189a00",
+      "source_index": 805
+    },
+    {
+      "row_index": 31,
+      "prompt_id": "55824a0a04c55fb6d2a8b43caba054eaaeccab47a45b8ed36e7d7c02a40cfc18",
+      "source_index": 798
+    }
+  ],
+  "valid_response_tokens": 8814,
+  "conditions": [
+    {
+      "epsilon": 0.05,
+      "policy_loss": 0.005343771073967218,
+      "clipped_surrogate": -0.005343771073967218,
+      "unclipped_surrogate": 0.0001367493678117171,
+      "clip_fraction": 0.10789652913808823,
+      "affected_token_fraction": 0.10789652913808823,
+      "surrogate_constrained_fraction": 0.05264352262020111
+    },
+    {
+      "epsilon": 0.2,
+      "policy_loss": 0.00394357880577445,
+      "clipped_surrogate": -0.00394357880577445,
+      "unclipped_surrogate": 0.0001367493678117171,
+      "clip_fraction": 0.008509189821779728,
+      "affected_token_fraction": 0.008509189821779728,
+      "surrogate_constrained_fraction": 0.0046516903676092625
+    },
+    {
+      "epsilon": 0.5,
+      "policy_loss": 0.003285819897428155,
+      "clipped_surrogate": -0.003285819897428155,
+      "unclipped_surrogate": 0.0001367493678117171,
+      "clip_fraction": 0.005559337325394154,
+      "affected_token_fraction": 0.005559337325394154,
+      "surrogate_constrained_fraction": 0.0032902201637625694
+    }
+  ]
+}
