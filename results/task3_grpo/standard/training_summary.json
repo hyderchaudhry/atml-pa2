@@ -1,0 +1,139 @@
+{
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 20,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "policy_epochs": 1,
+    "learning_rate": 5e-06,
+    "clip_epsilon": 0.2,
+    "kl_beta": 0.1,
+    "num_generations": 4,
+    "group_sizes": [
+      2,
+      4,
+      8
+    ],
+    "max_prompt_length": 256,
+    "max_completion_length": 512,
+    "mask_truncated_completions": true,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task3_grpo/standard",
+    "results_dir": "results/task3_grpo",
+    "group_cache": "cached/grpo_k_cache.jsonl",
+    "cache_generation_cap": 768
+  },
+  "seed": 6304,
+  "loss_type": "grpo",
+  "policy_checkpoint": "checkpoints/grpo_midpoint_policy",
+  "reference": {
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "disabled"
+  },
+  "metric_conventions": {
+    "kl": "common.metrics.sampled_kl; valid-token mean policy minus reference log probability",
+    "entropy": "common.metrics.sample_entropy; valid-token mean negative sampled log probability",
+    "response_length": "generated tokens including EOS, excluding padding; population std",
+    "group_reward_std": "population standard deviation; informative if > 1e-6",
+    "advantage": "within-prompt (reward - mean) / (population std + 1e-6); all K rewards before truncation masking",
+    "kl_loss": "released nonnegative sampled KL estimator; unchanged across normalizations",
+    "reward_max_length": "released common.generation.score_reward_pairs default: 1024",
+    "logp_gradient": "policy surrogate derivative w.r.t. sampled-token log probabilities; KL excluded"
+  },
+  "run_name": "standard",
+  "output": "/content/atml-pa2/outputs/task3_grpo/standard",
+  "completed_updates": 20,
+  "wall_clock_seconds": 338.1820695989991,
+  "peak_allocated_bytes": 16632947200,
+  "peak_reserved_bytes": 18509463552,
+  "memory_device": "cuda:0",
+  "generated_tokens": 23786,
+  "valid_training_tokens": 14570,
+  "mean_gradient_norm": 0.27142179347574713,
+  "skipped_steps": 4,
+  "last_update": {
+    "update": 20,
+    "learned_reward": 0.2112579345703125,
+    "kl": 0.00010151560127269477,
+    "entropy": 0.656960129737854,
+    "group_reward_std": 0.24148444831371307,
+    "uninformative_group_fraction": 0.0,
+    "response_length": 19.75,
+    "response_length_std": 4.4370598793029785,
+    "generated_tokens": 79,
+    "valid_training_tokens": 79,
+    "truncation_rate": 0.0,
+    "epochs": [
+      {
+        "epoch": 1,
+        "loss": 9.361324373458046e-07,
+        "policy_term": -1.4901161193847656e-08,
+        "sampled_kl": 9.510335985396523e-06,
+        "clip_fraction": 0.0,
+        "ratio_mean": 1.0,
+        "sample_entropy": 0.656960129737854,
+        "gradient_norm": 0.688045859336853,
+        "step_skipped": false
+      }
+    ],
+    "loss": 9.361324373458046e-07,
+    "policy_term": -1.4901161193847656e-08,
+    "sampled_kl": 9.510335985396523e-06,
+    "clip_fraction": 0.0,
+    "ratio_mean": 1.0,
+    "sample_entropy": 0.656960129737854,
+    "gradient_norm": 0.688045859336853,
+    "step_skipped": 0.0
+  }
+}

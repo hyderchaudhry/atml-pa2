@@ -1,0 +1,35 @@
+{
+  "num_prompts": 200,
+  "valid_response_tokens": 51184,
+  "learned_reward": 1.1493135833740233,
+  "kl": 0.00011296533106728654,
+  "entropy": 0.8346206153466651,
+  "response_length": 255.92,
+  "response_length_std": 188.2885381535478,
+  "eos_rate": 0.775,
+  "truncation_rate": 0.225,
+  "by_length": {
+    "short": {
+      "num_prompts": 107,
+      "valid_response_tokens": 10547,
+      "learned_reward": 1.0287502680983498,
+      "kl": 6.4208856208155e-05,
+      "entropy": 0.8613383483468908,
+      "response_length": 98.57009345794393,
+      "response_length_std": 79.18381692371295,
+      "eos_rate": 1.0,
+      "truncation_rate": 0.0
+    },
+    "long": {
+      "num_prompts": 93,
+      "valid_response_tokens": 40637,
+      "learned_reward": 1.2880262149277555,
+      "kl": 0.000125619674161985,
+      "entropy": 0.8276862469151032,
+      "response_length": 436.9569892473118,
+      "response_length_std": 88.13392960673326,
+      "eos_rate": 0.5161290322580645,
+      "truncation_rate": 0.4838709677419355
+    }
+  }
+}

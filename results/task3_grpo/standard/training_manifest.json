@@ -1,0 +1,267 @@
+{
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 20,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "policy_epochs": 1,
+    "learning_rate": 5e-06,
+    "clip_epsilon": 0.2,
+    "kl_beta": 0.1,
+    "num_generations": 4,
+    "group_sizes": [
+      2,
+      4,
+      8
+    ],
+    "max_prompt_length": 256,
+    "max_completion_length": 512,
+    "mask_truncated_completions": true,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task3_grpo/standard",
+    "results_dir": "results/task3_grpo",
+    "group_cache": "cached/grpo_k_cache.jsonl",
+    "cache_generation_cap": 768
+  },
+  "seed": 6304,
+  "loss_type": "grpo",
+  "policy_checkpoint": "checkpoints/grpo_midpoint_policy",
+  "reference": {
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "adapter": "disabled"
+  },
+  "metric_conventions": {
+    "kl": "common.metrics.sampled_kl; valid-token mean policy minus reference log probability",
+    "entropy": "common.metrics.sample_entropy; valid-token mean negative sampled log probability",
+    "response_length": "generated tokens including EOS, excluding padding; population std",
+    "group_reward_std": "population standard deviation; informative if > 1e-6",
+    "advantage": "within-prompt (reward - mean) / (population std + 1e-6); all K rewards before truncation masking",
+    "kl_loss": "released nonnegative sampled KL estimator; unchanged across normalizations",
+    "reward_max_length": "released common.generation.score_reward_pairs default: 1024",
+    "logp_gradient": "policy surrogate derivative w.r.t. sampled-token log probabilities; KL excluded"
+  },
+  "output": "/content/atml-pa2/outputs/task3_grpo/standard",
+  "run_name": "standard",
+  "prompt_schedule": [
+    [
+      {
+        "row_index": 0,
+        "prompt_id": "b0d35a5e39f7052ac66ea59ebb31bf70535e3ed3cb294dafdb4918e9fda4e879",
+        "source_index": 54416,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 1,
+        "prompt_id": "361c9921abedfb482ab331cd1f1d5dcb6b038376b9939a1afff6339e87060bd3",
+        "source_index": 44875,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 2,
+        "prompt_id": "031b833749cbdeab4b1f4ba4af6e325b5c17791958e10b7615a1e97ca33b0703",
+        "source_index": 46661,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 3,
+        "prompt_id": "767471940df7a8f247484346e1fcea4d02eca6d1fcbc90d264b0dbb94c39ba68",
+        "source_index": 12877,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 4,
+        "prompt_id": "81a35c3e324857688ecb9cd1e68c14275f01d7752ed6a0d2a5c9cf4cbeaf0439",
+        "source_index": 14183,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 5,
+        "prompt_id": "9ea7bde8bc147d9faa96dd85d06930f25660cdfd5239227be23a5ff2728637e6",
+        "source_index": 20853,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 6,
+        "prompt_id": "ff8a4bead03b120d7cd2e879a2b4cd3945d55a840ca78cdd24571cab5a434a59",
+        "source_index": 52932,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 7,
+        "prompt_id": "317132817254b4f8e35bbffa6faba1b8e1abbad8b3295186e73167375ec4176f",
+        "source_index": 29307,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 8,
+        "prompt_id": "a5cc4839643a3b1c510c2de1d870074538d4d195a87e5a8cd0a09730b474b620",
+        "source_index": 14665,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 9,
+        "prompt_id": "a1d7645f9eb58fab3a2cf8787ac367e0c5075f96f5308c60cbe49d3e117ac7d5",
+        "source_index": 29108,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 10,
+        "prompt_id": "f46d21abc10e4e62dbfa8db0b88f7df97af11b08d2f3f582fe910c23cf4f3d78",
+        "source_index": 59538,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 11,
+        "prompt_id": "4ff2dfbd8311ec3041b369c38a2046fa1c51b9396c6c0906e818bb55fa868d93",
+        "source_index": 37684,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 12,
+        "prompt_id": "3134909738c628ffdd7d972675614c04ef5e5f1b9c087fd1590df5d64b6fab14",
+        "source_index": 53105,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 13,
+        "prompt_id": "d86a6b729b3a10b29be186e72892679b59d524c4722bacf7c7c7054c639412fb",
+        "source_index": 43454,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 14,
+        "prompt_id": "f6582297a994f124de7085fe859ac4acf93e93d922cb96fdfa935dcde2bc7c3a",
+        "source_index": 46232,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 15,
+        "prompt_id": "a59417903ceb46cd175cb958dcb21d3089e75351b69483f92a519920b7fb4b2b",
+        "source_index": 1015,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 16,
+        "prompt_id": "3a59949a7a468cfbd3774ffe2f62bbdaf6e2b77c6040fb3394e2ea84cfa8be96",
+        "source_index": 12281,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 17,
+        "prompt_id": "a12832ddc56a0c3c33ed49630d92911a13d316ab07d44a8af18e91efbe76a57d",
+        "source_index": 51253,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 18,
+        "prompt_id": "2d8f125d9b0a959104e50e3786f475b7b8d41d708773afdafab983899cbb0221",
+        "source_index": 12884,
+        "source_split": "train_gen"
+      }
+    ],
+    [
+      {
+        "row_index": 19,
+        "prompt_id": "4dc1e88027e719326d5007278190de7e8520e25523da7c048d1fa8f57a617032",
+        "source_index": 57729,
+        "source_split": "train_gen"
+      }
+    ]
+  ],
+  "prompt_order": "released file order, cycling if needed",
+  "optimizer_state": "fresh AdamW; supplied checkpoint has adapter weights only",
+  "rollout_source": null,
+  "sampling": "current policy",
+  "saved_rollouts": null,
+  "runtime_scope": "rollout collection/replay and optimization; excludes model loading, saving, evaluation",
+  "gradient_norm": "parameter L2 norm before clipping",
+  "metric_timing": "current-policy KL/entropy before the final optimization epoch; sampled rewards/lengths before update; losses and gradient norms averaged over epochs",
+  "length_conditioning": "short <= max_completion_length/2, long > max_completion_length/2; masked responses retained with zero gradient"
+}

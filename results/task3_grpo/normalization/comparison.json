@@ -1,0 +1,222 @@
+{
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "updates": 20,
+    "fork_updates": 8,
+    "prompts_per_update": 1,
+    "policy_epochs": 1,
+    "learning_rate": 5e-06,
+    "clip_epsilon": 0.2,
+    "kl_beta": 0.1,
+    "num_generations": 4,
+    "group_sizes": [
+      2,
+      4,
+      8
+    ],
+    "max_prompt_length": 256,
+    "max_completion_length": 512,
+    "mask_truncated_completions": true,
+    "max_grad_norm": 1.0,
+    "output": "outputs/task3_grpo/standard",
+    "results_dir": "results/task3_grpo",
+    "group_cache": "cached/grpo_k_cache.jsonl",
+    "cache_generation_cap": 768
+  },
+  "conditions": [
+    {
+      "loss_type": "grpo",
+      "run_name": "normalization_grpo",
+      "updates": 8,
+      "generated_tokens": 9347,
+      "valid_training_tokens": 6787,
+      "mean_gradient_norm": 0.37618548050522804,
+      "skipped_steps": 1,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 51184,
+        "learned_reward": 1.1493135833740233,
+        "kl": 0.00011296533106728654,
+        "entropy": 0.8346206153466651,
+        "response_length": 255.92,
+        "response_length_std": 188.2885381535478,
+        "eos_rate": 0.775,
+        "truncation_rate": 0.225,
+        "by_length": {
+          "short": {
+            "num_prompts": 107,
+            "valid_response_tokens": 10547,
+            "learned_reward": 1.0287502680983498,
+            "kl": 6.4208856208155e-05,
+            "entropy": 0.8613383483468908,
+            "response_length": 98.57009345794393,
+            "response_length_std": 79.18381692371295,
+            "eos_rate": 1.0,
+            "truncation_rate": 0.0
+          },
+          "long": {
+            "num_prompts": 93,
+            "valid_response_tokens": 40637,
+            "learned_reward": 1.2880262149277555,
+            "kl": 0.000125619674161985,
+            "entropy": 0.8276862469151032,
+            "response_length": 436.9569892473118,
+            "response_length_std": 88.13392960673326,
+            "eos_rate": 0.5161290322580645,
+            "truncation_rate": 0.4838709677419355
+          }
+        }
+      },
+      "length_conditioned": {
+        "short": {
+          "num_completions": 12,
+          "num_masked": 0,
+          "response_length": 83.08333333333333,
+          "learned_reward": 0.14388020833333334,
+          "surrogate_logp_gradient_l1": 0.2121652727946639,
+          "surrogate_logp_gradient_l2": 0.027998905551309388,
+          "mean_absolute_token_gradient": 0.004002394896815531
+        },
+        "long": {
+          "num_completions": 20,
+          "num_masked": 5,
+          "response_length": 417.5,
+          "learned_reward": 1.8382080078125,
+          "surrogate_logp_gradient_l1": 0.1588204612955451,
+          "surrogate_logp_gradient_l2": 0.008279726945329458,
+          "mean_absolute_token_gradient": 0.000435894063411979
+        }
+      },
+      "training_manifest": "/content/atml-pa2/results/task3_grpo/normalization_grpo/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task3_grpo/normalization_grpo/trajectory.jsonl",
+      "training_completions": "/content/atml-pa2/results/task3_grpo/normalization_grpo/training_completions.jsonl",
+      "held_out_examples": "/content/atml-pa2/results/task3_grpo/normalization_grpo/generations.jsonl"
+    },
+    {
+      "loss_type": "dr_grpo",
+      "run_name": "normalization_dr_grpo",
+      "updates": 8,
+      "generated_tokens": 9347,
+      "valid_training_tokens": 6787,
+      "mean_gradient_norm": 0.0807005213573575,
+      "skipped_steps": 1,
+      "held_out": {
+        "num_prompts": 200,
+        "valid_response_tokens": 51584,
+        "learned_reward": 1.0642273807525635,
+        "kl": 0.00010113812527658211,
+        "entropy": 0.8256051825044701,
+        "response_length": 257.92,
+        "response_length_std": 193.0408081209774,
+        "eos_rate": 0.75,
+        "truncation_rate": 0.25,
+        "by_length": {
+          "short": {
+            "num_prompts": 103,
+            "valid_response_tokens": 9248,
+            "learned_reward": 0.9335719914112276,
+            "kl": 0.00013562528408149366,
+            "entropy": 0.8773271275826635,
+            "response_length": 89.7864077669903,
+            "response_length_std": 78.1570053491951,
+            "eos_rate": 1.0,
+            "truncation_rate": 0.0
+          },
+          "long": {
+            "num_prompts": 97,
+            "valid_response_tokens": 42336,
+            "learned_reward": 1.202964546754188,
+            "kl": 9.360464916575866e-05,
+            "entropy": 0.8143068891351596,
+            "response_length": 436.45360824742266,
+            "response_length_std": 91.95886805966893,
+            "eos_rate": 0.4845360824742268,
+            "truncation_rate": 0.5154639175257731
+          }
+        }
+      },
+      "length_conditioned": {
+        "short": {
+          "num_completions": 12,
+          "num_masked": 0,
+          "response_length": 83.08333333333333,
+          "learned_reward": 0.14388020833333334,
+          "surrogate_logp_gradient_l1": 0.032976971046688654,
+          "surrogate_logp_gradient_l2": 0.003488206144538708,
+          "mean_absolute_token_gradient": 0.0004142494502351231
+        },
+        "long": {
+          "num_completions": 20,
+          "num_masked": 5,
+          "response_length": 417.5,
+          "learned_reward": 1.8382080078125,
+          "surrogate_logp_gradient_l1": 0.11734986957162619,
+          "surrogate_logp_gradient_l2": 0.00600627536769025,
+          "mean_absolute_token_gradient": 0.00031017835935926997
+        }
+      },
+      "training_manifest": "/content/atml-pa2/results/task3_grpo/normalization_dr_grpo/training_manifest.json",
+      "trajectory": "/content/atml-pa2/results/task3_grpo/normalization_dr_grpo/trajectory.jsonl",
+      "training_completions": "/content/atml-pa2/results/task3_grpo/normalization_dr_grpo/training_completions.jsonl",
+      "held_out_examples": "/content/atml-pa2/results/task3_grpo/normalization_dr_grpo/generations.jsonl"
+    }
+  ],
+  "matched_rollout_protocol": "canonical fork samples online at every update; both forks use identical saved tokens, raw rewards, within-prompt advantages, masks and canonical behavior log probabilities; Dr-GRPO uses importance ratios relative to that shared behavior policy",
+  "controlled_change": "policy surrogate denominator only: realized completion length vs configured max_completion_length; unchanged reward normalization, clipping and KL loss",
+  "generation_budget": "actual sampled nonpadding tokens are identical; shared samples generated once, with the same effective token budget for both forks",
+  "length_bins": "short <= configured max_completion_length/2; long > that threshold; includes zero-gradient masked completions",
+  "gradient_statistic": "L1/L2 norm of policy-surrogate derivative w.r.t. each completion's sampled-token log probabilities; exact normalization diagnostic, not a model parameter-gradient norm; KL excluded",
+  "quality_evidence": "paired held-out responses for manual inspection; learned reward is not ground-truth quality",
+  "paired_examples": "/content/atml-pa2/results/task3_grpo/normalization/paired_generations.jsonl"
+}
