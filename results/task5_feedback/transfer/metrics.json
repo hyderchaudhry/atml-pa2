@@ -1,0 +1,145 @@
+{
+  "dataset": "transfer",
+  "policies": {
+    "sft": {
+      "n": 100,
+      "exact_accuracy": 0.46,
+      "format_compliance": 0.64,
+      "response_tokens_mean": 161.19,
+      "response_tokens_std": 77.08757292845586,
+      "truncation_rate": 0.01,
+      "failure_counts": {
+        "correct": 46,
+        "wrong_final": 18,
+        "missing_final": 36
+      }
+    },
+    "rlvr": {
+      "n": 100,
+      "exact_accuracy": 0.49,
+      "format_compliance": 0.63,
+      "response_tokens_mean": 164.41,
+      "response_tokens_std": 78.8014079823451,
+      "truncation_rate": 0.01,
+      "failure_counts": {
+        "correct": 49,
+        "wrong_final": 14,
+        "missing_final": 37
+      }
+    },
+    "rlaif": {
+      "n": 100,
+      "exact_accuracy": 0.48,
+      "format_compliance": 0.62,
+      "response_tokens_mean": 151.53,
+      "response_tokens_std": 57.19728227809429,
+      "truncation_rate": 0.0,
+      "failure_counts": {
+        "correct": 48,
+        "wrong_final": 14,
+        "missing_final": 38
+      }
+    }
+  },
+  "pairwise": {
+    "sft_vs_rlvr": {
+      "n": 100,
+      "wins_a": 13,
+      "wins_b": 17,
+      "ties": 70,
+      "win_rate_a": 0.48,
+      "win_rate_b": 0.52,
+      "tie_rate": 0.7,
+      "verifier_judge_agreement": 0.51,
+      "confusion": {
+        "A": {
+          "A": 1,
+          "B": 3,
+          "TIE": 13
+        },
+        "B": {
+          "A": 3,
+          "B": 5,
+          "TIE": 12
+        },
+        "TIE": {
+          "A": 9,
+          "B": 9,
+          "TIE": 45
+        }
+      },
+      "different_outcome_n": 37,
+      "different_outcome_agreement": 0.16216216216216217,
+      "different_outcome_wrong_preference_rate": 0.16216216216216217,
+      "different_outcome_tie_rate": 0.6756756756756757,
+      "same_outcome_n": 63,
+      "same_outcome_ai_distinction_rate": 0.2857142857142857
+    },
+    "sft_vs_rlaif": {
+      "n": 100,
+      "wins_a": 22,
+      "wins_b": 15,
+      "ties": 63,
+      "win_rate_a": 0.535,
+      "win_rate_b": 0.465,
+      "tie_rate": 0.63,
+      "verifier_judge_agreement": 0.62,
+      "confusion": {
+        "A": {
+          "A": 7,
+          "B": 2,
+          "TIE": 7
+        },
+        "B": {
+          "A": 5,
+          "B": 6,
+          "TIE": 7
+        },
+        "TIE": {
+          "A": 10,
+          "B": 7,
+          "TIE": 49
+        }
+      },
+      "different_outcome_n": 34,
+      "different_outcome_agreement": 0.38235294117647056,
+      "different_outcome_wrong_preference_rate": 0.20588235294117646,
+      "different_outcome_tie_rate": 0.4117647058823529,
+      "same_outcome_n": 66,
+      "same_outcome_ai_distinction_rate": 0.25757575757575757
+    },
+    "rlvr_vs_rlaif": {
+      "n": 100,
+      "wins_a": 14,
+      "wins_b": 13,
+      "ties": 73,
+      "win_rate_a": 0.505,
+      "win_rate_b": 0.495,
+      "tie_rate": 0.73,
+      "verifier_judge_agreement": 0.61,
+      "confusion": {
+        "A": {
+          "A": 4,
+          "B": 1,
+          "TIE": 10
+        },
+        "B": {
+          "A": 0,
+          "B": 4,
+          "TIE": 10
+        },
+        "TIE": {
+          "A": 10,
+          "B": 8,
+          "TIE": 53
+        }
+      },
+      "different_outcome_n": 29,
+      "different_outcome_agreement": 0.27586206896551724,
+      "different_outcome_wrong_preference_rate": 0.034482758620689655,
+      "different_outcome_tie_rate": 0.6896551724137931,
+      "same_outcome_n": 71,
+      "same_outcome_ai_distinction_rate": 0.2535211267605634
+    }
+  }
+}

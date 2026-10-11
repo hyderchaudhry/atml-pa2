@@ -1,0 +1,145 @@
+{
+  "dataset": "gsm",
+  "policies": {
+    "sft": {
+      "n": 300,
+      "exact_accuracy": 0.32,
+      "format_compliance": 0.43,
+      "response_tokens_mean": 283.4033333333333,
+      "response_tokens_std": 100.19201892144682,
+      "truncation_rate": 0.04666666666666667,
+      "failure_counts": {
+        "missing_final": 171,
+        "correct": 96,
+        "wrong_final": 33
+      }
+    },
+    "rlvr": {
+      "n": 300,
+      "exact_accuracy": 0.32666666666666666,
+      "format_compliance": 0.43333333333333335,
+      "response_tokens_mean": 289.6433333333333,
+      "response_tokens_std": 97.38741939057402,
+      "truncation_rate": 0.04666666666666667,
+      "failure_counts": {
+        "missing_final": 170,
+        "correct": 98,
+        "wrong_final": 32
+      }
+    },
+    "rlaif": {
+      "n": 300,
+      "exact_accuracy": 0.28,
+      "format_compliance": 0.41,
+      "response_tokens_mean": 283.6066666666667,
+      "response_tokens_std": 100.2910695038308,
+      "truncation_rate": 0.043333333333333335,
+      "failure_counts": {
+        "missing_final": 177,
+        "correct": 84,
+        "wrong_final": 39
+      }
+    }
+  },
+  "pairwise": {
+    "sft_vs_rlvr": {
+      "n": 300,
+      "wins_a": 16,
+      "wins_b": 22,
+      "ties": 262,
+      "win_rate_a": 0.49,
+      "win_rate_b": 0.51,
+      "tie_rate": 0.8733333333333333,
+      "verifier_judge_agreement": 0.6566666666666666,
+      "confusion": {
+        "A": {
+          "A": 5,
+          "B": 5,
+          "TIE": 36
+        },
+        "B": {
+          "A": 2,
+          "B": 6,
+          "TIE": 40
+        },
+        "TIE": {
+          "A": 9,
+          "B": 11,
+          "TIE": 186
+        }
+      },
+      "different_outcome_n": 94,
+      "different_outcome_agreement": 0.11702127659574468,
+      "different_outcome_wrong_preference_rate": 0.07446808510638298,
+      "different_outcome_tie_rate": 0.8085106382978723,
+      "same_outcome_n": 206,
+      "same_outcome_ai_distinction_rate": 0.0970873786407767
+    },
+    "sft_vs_rlaif": {
+      "n": 300,
+      "wins_a": 24,
+      "wins_b": 19,
+      "ties": 257,
+      "win_rate_a": 0.5083333333333333,
+      "win_rate_b": 0.49166666666666664,
+      "tie_rate": 0.8566666666666667,
+      "verifier_judge_agreement": 0.6833333333333333,
+      "confusion": {
+        "A": {
+          "A": 10,
+          "B": 4,
+          "TIE": 38
+        },
+        "B": {
+          "A": 4,
+          "B": 6,
+          "TIE": 30
+        },
+        "TIE": {
+          "A": 10,
+          "B": 9,
+          "TIE": 189
+        }
+      },
+      "different_outcome_n": 92,
+      "different_outcome_agreement": 0.17391304347826086,
+      "different_outcome_wrong_preference_rate": 0.08695652173913043,
+      "different_outcome_tie_rate": 0.7391304347826086,
+      "same_outcome_n": 208,
+      "same_outcome_ai_distinction_rate": 0.09134615384615384
+    },
+    "rlvr_vs_rlaif": {
+      "n": 300,
+      "wins_a": 22,
+      "wins_b": 28,
+      "ties": 250,
+      "win_rate_a": 0.49,
+      "win_rate_b": 0.51,
+      "tie_rate": 0.8333333333333334,
+      "verifier_judge_agreement": 0.63,
+      "confusion": {
+        "A": {
+          "A": 7,
+          "B": 3,
+          "TIE": 44
+        },
+        "B": {
+          "A": 2,
+          "B": 7,
+          "TIE": 31
+        },
+        "TIE": {
+          "A": 13,
+          "B": 18,
+          "TIE": 175
+        }
+      },
+      "different_outcome_n": 94,
+      "different_outcome_agreement": 0.14893617021276595,
+      "different_outcome_wrong_preference_rate": 0.05319148936170213,
+      "different_outcome_tie_rate": 0.7978723404255319,
+      "same_outcome_n": 206,
+      "same_outcome_ai_distinction_rate": 0.15048543689320387
+    }
+  }
+}

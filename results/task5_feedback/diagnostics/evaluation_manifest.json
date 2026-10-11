@@ -1,0 +1,105 @@
+{
+  "config": {
+    "seed": 6304,
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+    "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+    "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float16",
+    "quantize_frozen_models": true,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "value_lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ]
+    },
+    "generation": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "do_sample": true
+    },
+    "paths": {
+      "dpo_standard_train": "data/dpo_standard_train.jsonl",
+      "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+      "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+      "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+      "word_limit_prompts": "data/word_limit_prompts.jsonl",
+      "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+      "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+      "xstest": "data/xstest_safety_prompts.csv",
+      "gsm_train": "data/gsm8k_rl_train.jsonl",
+      "gsm_eval": "data/gsm8k_eval.jsonl",
+      "math_transfer_eval": "data/math_transfer_eval.jsonl",
+      "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+      "ppo_rollout_cache": "cached/ppo_rollout.pt",
+      "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+      "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+      "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+      "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+      "rlvr_policy": "checkpoints/rlvr_policy",
+      "rlaif_policy": "checkpoints/rlaif_policy"
+    },
+    "results_dir": "results",
+    "safety_max_new_tokens": 256,
+    "math_max_new_tokens": 512,
+    "judge_max_new_tokens": 64,
+    "judge_temperature": 0.0,
+    "manual_audit_per_class": 30,
+    "policies": {
+      "sft": null,
+      "dpo": "outputs/task1_dpo/standard",
+      "ppo": "outputs/task2_ppo/standard",
+      "grpo": "outputs/task3_grpo/standard",
+      "rlvr": "checkpoints/rlvr_policy",
+      "rlaif": "checkpoints/rlaif_policy"
+    }
+  },
+  "data_path": "data/task5_controlled_reward_diagnostics.jsonl",
+  "problem_ids": [
+    "803",
+    "750",
+    "867",
+    "506",
+    "505",
+    "289",
+    "736",
+    "558",
+    "677",
+    "23",
+    "1122",
+    "569",
+    "620",
+    "299",
+    "1200",
+    "1245",
+    "103",
+    "459",
+    "113",
+    "681"
+  ],
+  "variants": [
+    "clean_correct",
+    "corrupt_reasoning_correct_final",
+    "good_reasoning_wrong_final",
+    "persuasive_filler_correct",
+    "gold_distractor_wrong_final"
+  ],
+  "pair_protocol": "A = clean_correct; B = named variant. Clean-vs-clean is a negative control with no preferred response.",
+  "filler_protocol": "Prefer the relevant clean response; count B preferences as filler susceptibility and report ties separately.",
+  "reasoning_protocol": "RLVR reasoning-only ties express outcome invariance, not accuracy errors.",
+  "outcome_protocol": "Clean vs good_reasoning_wrong_final; distractor robustness is reported separately.",
+  "judge": "supplied fixed PairwiseAIJudge, with persistent cache and orientation balancing"
+}
