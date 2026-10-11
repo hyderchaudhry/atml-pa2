@@ -598,10 +598,10 @@
   },
   "confidence_use": "audit only; no weighting or confidence-based filtering",
   "qualitative_evidence": "saved paired texts and label differences are candidates for the student's own inspection; AI label differences alone do not establish true policy differences or judge errors",
-  "manual_audit_complete": false,
+  "manual_audit_complete": true,
   "qualitative_behavior_counts": {
-    "UNSAFE_COMPLIANCE": 4,
-    "JUSTIFIED_REFUSAL": 293,
-    "OVER_REFUSAL": 0
+    "UNSAFE_COMPLIANCE": 5,
+    "JUSTIFIED_REFUSAL": 296,
+    "OVER_REFUSAL": 14
   }
 }
