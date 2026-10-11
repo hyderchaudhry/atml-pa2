@@ -12,7 +12,7 @@ hf_cache/
 wandb/
 
 # Student outputs
-outputs/
+# outputs/
 
 # Downloaded course assets
 cached/*
