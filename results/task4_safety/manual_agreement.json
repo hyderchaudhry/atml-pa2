@@ -1,0 +1,818 @@
+{
+  "sft": {
+    "expected_num_prompts": 60,
+    "complete": false,
+    "missing_label_ids": [
+      0,
+      1,
+      31,
+      39,
+      42,
+      62,
+      65,
+      72,
+      75,
+      88,
+      92,
+      100,
+      106,
+      109,
+      117,
+      125,
+      139,
+      140,
+      142,
+      157,
+      168,
+      172,
+      177,
+      179,
+      182,
+      194,
+      202,
+      226,
+      227,
+      229,
+      233,
+      263,
+      272,
+      273,
+      277,
+      280,
+      284,
+      298,
+      313,
+      320,
+      341,
+      350,
+      351,
+      357,
+      365,
+      369,
+      371,
+      372,
+      373,
+      380,
+      384,
+      392,
+      393,
+      394,
+      395,
+      400,
+      409,
+      416,
+      443,
+      445
+    ],
+    "num_labeled": 0,
+    "agreement": null,
+    "ai_ambiguous_count": 0,
+    "manual_ambiguous_count": 0,
+    "ai_ambiguous_rate": null,
+    "manual_ambiguous_rate": null,
+    "confusion_matrix": {
+      "AMBIGUOUS": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "JUSTIFIED_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "OVER_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "SAFE_ANSWER": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "UNSAFE_COMPLIANCE": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      }
+    },
+    "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included",
+    "by_class": {
+      "SAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      },
+      "UNSAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      }
+    }
+  },
+  "dpo": {
+    "expected_num_prompts": 60,
+    "complete": false,
+    "missing_label_ids": [
+      0,
+      1,
+      31,
+      39,
+      42,
+      62,
+      65,
+      72,
+      75,
+      88,
+      92,
+      100,
+      106,
+      109,
+      117,
+      125,
+      139,
+      140,
+      142,
+      157,
+      168,
+      172,
+      177,
+      179,
+      182,
+      194,
+      202,
+      226,
+      227,
+      229,
+      233,
+      263,
+      272,
+      273,
+      277,
+      280,
+      284,
+      298,
+      313,
+      320,
+      341,
+      350,
+      351,
+      357,
+      365,
+      369,
+      371,
+      372,
+      373,
+      380,
+      384,
+      392,
+      393,
+      394,
+      395,
+      400,
+      409,
+      416,
+      443,
+      445
+    ],
+    "num_labeled": 0,
+    "agreement": null,
+    "ai_ambiguous_count": 0,
+    "manual_ambiguous_count": 0,
+    "ai_ambiguous_rate": null,
+    "manual_ambiguous_rate": null,
+    "confusion_matrix": {
+      "AMBIGUOUS": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "JUSTIFIED_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "OVER_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "SAFE_ANSWER": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "UNSAFE_COMPLIANCE": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      }
+    },
+    "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included",
+    "by_class": {
+      "SAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      },
+      "UNSAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      }
+    }
+  },
+  "ppo": {
+    "expected_num_prompts": 60,
+    "complete": false,
+    "missing_label_ids": [
+      0,
+      1,
+      31,
+      39,
+      42,
+      62,
+      65,
+      72,
+      75,
+      88,
+      92,
+      100,
+      106,
+      109,
+      117,
+      125,
+      139,
+      140,
+      142,
+      157,
+      168,
+      172,
+      177,
+      179,
+      182,
+      194,
+      202,
+      226,
+      227,
+      229,
+      233,
+      263,
+      272,
+      273,
+      277,
+      280,
+      284,
+      298,
+      313,
+      320,
+      341,
+      350,
+      351,
+      357,
+      365,
+      369,
+      371,
+      372,
+      373,
+      380,
+      384,
+      392,
+      393,
+      394,
+      395,
+      400,
+      409,
+      416,
+      443,
+      445
+    ],
+    "num_labeled": 0,
+    "agreement": null,
+    "ai_ambiguous_count": 0,
+    "manual_ambiguous_count": 0,
+    "ai_ambiguous_rate": null,
+    "manual_ambiguous_rate": null,
+    "confusion_matrix": {
+      "AMBIGUOUS": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "JUSTIFIED_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "OVER_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "SAFE_ANSWER": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "UNSAFE_COMPLIANCE": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      }
+    },
+    "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included",
+    "by_class": {
+      "SAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      },
+      "UNSAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      }
+    }
+  },
+  "grpo": {
+    "expected_num_prompts": 60,
+    "complete": false,
+    "missing_label_ids": [
+      0,
+      1,
+      31,
+      39,
+      42,
+      62,
+      65,
+      72,
+      75,
+      88,
+      92,
+      100,
+      106,
+      109,
+      117,
+      125,
+      139,
+      140,
+      142,
+      157,
+      168,
+      172,
+      177,
+      179,
+      182,
+      194,
+      202,
+      226,
+      227,
+      229,
+      233,
+      263,
+      272,
+      273,
+      277,
+      280,
+      284,
+      298,
+      313,
+      320,
+      341,
+      350,
+      351,
+      357,
+      365,
+      369,
+      371,
+      372,
+      373,
+      380,
+      384,
+      392,
+      393,
+      394,
+      395,
+      400,
+      409,
+      416,
+      443,
+      445
+    ],
+    "num_labeled": 0,
+    "agreement": null,
+    "ai_ambiguous_count": 0,
+    "manual_ambiguous_count": 0,
+    "ai_ambiguous_rate": null,
+    "manual_ambiguous_rate": null,
+    "confusion_matrix": {
+      "AMBIGUOUS": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "JUSTIFIED_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "OVER_REFUSAL": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "SAFE_ANSWER": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      },
+      "UNSAFE_COMPLIANCE": {
+        "AMBIGUOUS": 0,
+        "JUSTIFIED_REFUSAL": 0,
+        "OVER_REFUSAL": 0,
+        "SAFE_ANSWER": 0,
+        "UNSAFE_COMPLIANCE": 0
+      }
+    },
+    "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included",
+    "by_class": {
+      "SAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      },
+      "UNSAFE": {
+        "num_labeled": 0,
+        "agreement": null,
+        "ai_ambiguous_count": 0,
+        "manual_ambiguous_count": 0,
+        "ai_ambiguous_rate": null,
+        "manual_ambiguous_rate": null,
+        "confusion_matrix": {
+          "AMBIGUOUS": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "JUSTIFIED_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "OVER_REFUSAL": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "SAFE_ANSWER": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          },
+          "UNSAFE_COMPLIANCE": {
+            "AMBIGUOUS": 0,
+            "JUSTIFIED_REFUSAL": 0,
+            "OVER_REFUSAL": 0,
+            "SAFE_ANSWER": 0,
+            "UNSAFE_COMPLIANCE": 0
+          }
+        },
+        "confusion_axes": "rows = manual labels; columns = AI labels; all five labels included"
+      }
+    }
+  }
+}
