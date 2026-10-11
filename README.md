@@ -131,6 +131,26 @@ python -m task4_safety.make_audit_sheet --config configs/feedback.yaml
 python -m task4_safety.evaluate_safety --config configs/feedback.yaml
 ```
 
+When responses and AI judging are already saved, label the existing audit sheets
+with the human-only helper:
+
+```bash
+python -m task4_safety.manual_label --all
+# Or label a single policy:
+python -m task4_safety.manual_label results/task4_safety/manual_audit_sft.csv
+```
+
+The helper checks all four sheets against the 60 IDs in
+`results/task4_safety/manual_audit_ids.csv` before labeling. It reads only those
+CSVs, saves each human judgment immediately, and accepts optional notes. Use `q`
+or Ctrl-C to stop; rerun the same command to resume, skipping valid saved labels.
+After all four policies show 60/60, recompute metrics and manual-vs-AI agreement
+from the saved files:
+
+```bash
+python -m task4_safety.evaluate_safety --config configs/feedback.yaml
+```
+
 ### Task 5 - RLVR vs RLAIF
 
 The exact verifier and pairwise AI judge are supplied; you implement the evaluation/analysis.
